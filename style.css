@@ -30,6 +30,7 @@
     --color-valid: rgb(141, 228, 141);
     --color-wrong: rgb(221, 140, 140);
     --color-text: rgb(255, 255, 255);
+    --selected: rgb(160, 160, 251);
 }
 
 * {
@@ -207,10 +208,10 @@ form {
     font-weight: 600;
 }
 .options-container input[type='checkbox'] + .option{
-    border: 2px dashed var(--color-background);
+    border: 2px dashed var(--selected);
 }
 .options-container > input:checked + .option{
-    background: var(--color-background);
+    background: var(--selected);
 } 
 .finish .options-container > input + .true{
     background: var(--color-valid);

@@ -7,7 +7,7 @@ new Question({
 })
 new Question({
     title: "Meaning of the word: curious",
-    options: { list: ['eager to know', 'very angry', 'sleepy', 'quiet'], correct: 'eager to know' },
+    options: {  list: {'eager to know':true, 'very angry':false, 'sleepy':false, 'quiet':false} },
     summary: [
         { text: '“Curious” describe a alguien que quiere saber más.' }
     ]

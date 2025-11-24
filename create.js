@@ -205,6 +205,25 @@ class CreateE { //Estudiar getters y setters y aplicar. estudiar la mutabilidad 
 		}
 		return this
 	}
+	 text(content) {
+        this.node.textContent = content;
+        return this;
+    }
+
+    class(cls) {
+        this.node.classList.add(cls);
+        return this;
+    }
+
+    removeClass(cls) {
+        this.node.classList.remove(cls);
+        return this;
+    }
+
+    delayClass(cls, delay) {
+        setTimeout(() => this.node.classList.add(cls), delay);
+        return this;
+    }
 	
 }
 
