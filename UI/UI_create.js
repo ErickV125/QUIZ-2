@@ -117,7 +117,14 @@ const configQuestion = {
             options = Object.keys(Data.list);
             instance.answer = Object.keys(Data.list).filter(key => Data.list[key])
         }
-
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // intercambio
+            }
+            return array;
+        }
+        options = shuffle(options);
         options.forEach((option, i) => {
             let input = new CreateE('input', '', {
                 PropertyList: { name: `question-${instance.id}`, id: `question-${instance.id}-option${i}`, value: option, type: type },
@@ -366,33 +373,35 @@ function gradeQuiz() {
 }
 function resultsBlock(correct, total, score) {
     const container = new CreateE('div', '', {
-        Parent:'resultsSection',
+        Parent: 'resultsSection',
         ClassList: "containerResults",
     });
     const result = new CreateE('div', '', {
         Parent: container,
         ClassList: "result",
     }).create();
-     const p = new CreateE('p', '', {
+    const p = new CreateE('p', '', {
         Parent: result,
-        autoGenWords: {string: `${correct} / ${total} : ${score}%`, time:10}
+        autoGenWords: { string: `${correct} / ${total} : ${score}%`, time: 10 }
     }).create();
     const btn = new CreateE('button', '', {
         Parent: container,
         ClassList: "BTNFINISH",
-        EventList:{'click':()=>{
-            location.reload();
-        }}
+        EventList: {
+            'click': () => {
+                location.reload();
+            }
+        }
     }).create();
     let progress = 0
 
-    let intevalo = setInterval(()=>{
+    let intevalo = setInterval(() => {
         document.documentElement.style.setProperty('--progress', `${progress}%`);
-        if(progress >= score){
+        if (progress >= score) {
             clearInterval(intevalo)
         }
         progress++
-    },16)
+    }, 16)
     btn.node.textContent = 'Intentar de nuevo'
     container.create()
 }
