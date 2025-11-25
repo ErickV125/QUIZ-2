@@ -25,7 +25,7 @@ const configQuestion = {
         titleDiv.create();
         setTimeout(() => {
             titleDiv.node.classList.add('start_transition_entrance')
-        }, 300 * instance.id)
+        }, 0 * instance.id)
     },
     codingText: (Data) => { },
     img: (Data, instance) => {
@@ -64,7 +64,7 @@ const configQuestion = {
         }
         setTimeout(() => {
             img_container.node.classList.add('start_transition_entrance')
-        }, 350)
+        }, 0)
     },
     table: (Data, instance) => {
         const tableData = Data;
@@ -151,7 +151,7 @@ const configQuestion = {
         })
         setTimeout(() => {
             options_container.node.classList.add('start_transition_entrance')
-        }, 350 * instance.id)
+        }, 0 * instance.id)
     },
     summary: (Data, instance) => {
         const summary = new Summary(Data, instance.ObjCreate)
@@ -207,7 +207,7 @@ class Question {
         this.ObjCreate.create();
         setTimeout(() => {
             this.ObjCreate.node.classList.add('start_transition_entrance')
-        }, 50 * this.id)
+        }, 0 * this.id)
     }
 }
 const configSummary = {
