@@ -116,6 +116,9 @@ const configQuestion = {
             type = 'checkbox'
             options = Object.keys(Data.list);
             instance.answer = Object.keys(Data.list).filter(key => Data.list[key])
+            if (1== instance.answer.reduce((acc,val)=>{if(val){return 1}},0)){
+                type = 'radio'
+            }
         }
         function shuffle(array) {
             for (let i = array.length - 1; i > 0; i--) {

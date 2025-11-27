@@ -1,798 +1,834 @@
-new Question({
-    title: "¿Cuál es la unidad mínima de almacenamiento físico en un disco magnético?",
-    options: { 
-        list: ['Sector', 'Clúster', 'Pista', 'Cilindro'], 
-        correct: 'Sector' 
-    },
-    summary: [
-        { title: 'Unidad mínima del disco' },
-        { text: 'El sector es la unidad básica de lectura/escritura del disco. Normalmente mide 512 bytes en sistemas tradicionales.' }
-    ]
-})
-new Question({
-    title: "¿Cuál es la principal desventaja de la asignación contigua de archivos?",
-    options: { 
-        list: ['Fragmentación externa', 'Acceso lento', 'No soporta archivos grandes', 'No permite acceso secuencial'], 
-        correct: 'Fragmentación externa' 
-    },
-    summary: [
-        { title: 'Problema de fragmentación' },
-        { text: 'La asignación contigua coloca el archivo en bloques adyacentes. Con el tiempo, el disco se llena de huecos, lo que impide almacenar archivos grandes.' }
-    ]
-})
-new Question({
-    title: "¿Qué tipo de enlace comparte el mismo descriptor de archivo?",
-    options: { 
-        list: ['Enlace físico (hard link)', 'Enlace simbólico', 'Acceso directo', 'Vínculo lógico'], 
-        correct: 'Enlace físico (hard link)' 
-    },
-    summary: [
-        { title: 'Hard link' },
-        { text: 'Un enlace físico apunta directamente al mismo inodo o descriptor del archivo real. Un enlace simbólico solo guarda su nombre como referencia.' }
-    ]
-})
-new Question({
-    title: "¿Cómo se caracterizan los archivos secuenciales?",
-    options: { 
-        list: ['Registros de tamaño fijo ordenados por una clave', 'Registros insertados sin orden', 'Uso de tablas hash', 'Organización mediante índices múltiples'], 
-        correct: 'Registros de tamaño fijo ordenados por una clave' 
-    },
-    summary: [
-        { title: 'Archivo secuencial' },
-        { text: 'En esta organización todos los registros tienen el mismo tamaño y están ordenados según una clave primaria.' }
-    ]
-})
-new Question({
-    title: "¿Cuál de los siguientes es un requisito esencial de seguridad?",
-    options: { 
-        list: ['Confidencialidad', 'Compactación', 'Fragmentación', 'Indexación'], 
-        correct: 'Confidencialidad' 
-    },
-    summary: [
-        { title: 'Requisitos de seguridad' },
-        { text: 'Todo sistema debe garantizar confidencialidad, integridad y disponibilidad de la información.' }
-    ]
-})
-new Question({
-    title: "¿Qué ventaja principal ofrece la asignación indexada?",
-    options: { 
-        list: ['Evita la fragmentación externa y permite acceso directo', 'No necesita bloques índices', 'Es la más rápida en lectura secuencial', 'Usa sectores contiguos siempre'], 
-        correct: 'Evita la fragmentación externa y permite acceso directo'
-    },
-    summary: [
-        { title: 'Asignación indexada' },
-        { text: 'Organiza un archivo a través de un bloque índice, lo que permite ubicar cualquier parte sin necesitar contigüidad física.' }
-    ]
-})
-new Question({
-    title: "¿Qué caracteriza a un gusano informático?",
-    options: { 
-        list: ['Se replica a través de una red', 'Requiere ser ejecutado manualmente', 'Se oculta dentro de otro programa', 'Solo destruye archivos'], 
-        correct: 'Se replica a través de una red' 
-    },
-    summary: [
-        { title: 'Gusano' },
-        { text: 'Un gusano se replica a través de la red, normalmente sin intervención del usuario, consumiendo recursos.' }
-    ]
-})
-new Question({
-    title: "¿Cómo se almacenan los registros en un archivo tipo pila?",
-    options: { 
-        list: ['En el orden en que llegan', 'Ordenados por clave', 'Organizados con un índice', 'Ubicados según una función hash'], 
-        correct: 'En el orden en que llegan' 
-    },
-    summary: [
-        { title: 'Archivo en pila' },
-        { text: 'En esta organización no existe orden; los registros se agregan conforme llegan, útil para datos temporales.' }
-    ]
-})
-new Question({
-    title: "¿Qué característica pertenece a un directorio en forma de árbol jerárquico?",
-    options: { 
-        list: ['Cada archivo tiene un único camino (path) absoluto', 'Los archivos pueden tener múltiples padres', 'Solo permite un nivel de directorios', 'No usa rutas absolutas'], 
-        correct: 'Cada archivo tiene un único camino (path) absoluto'
-    },
-    summary: [
-        { title: 'Árbol jerárquico' },
-        { text: 'En esta estructura existe un solo trayecto posible desde la raíz hasta cada archivo u objeto.' }
-    ]
-})
-new Question({
-    title: "¿Qué representa una ACL (Access Control List)?",
-    options: { 
-        list: ['Lista por objeto con dominios y sus permisos', 'Lista por dominio de objetos accesibles', 'Mapa de bloques del disco', 'Tabla de usuarios del sistema'], 
-        correct: 'Lista por objeto con dominios y sus permisos'
-    },
-    summary: [
-        { title: 'Access Control List' },
-        { text: 'La ACL es una descomposición en columnas de la matriz de acceso, listando qué dominio puede realizar qué acción sobre ese objeto.' },
-        { table: [['Objeto', 'Dominio', 'Permisos'], ['Archivo1', 'D1', 'Leer, Escribir'], ['Archivo1', 'D2', 'Leer']] }
-    ]
-})
-new Question({
-    title: "¿Qué es un clúster dentro del sistema de archivos?",
-    options: { 
-        list: ['Un conjunto de sectores contiguos', 'Un tipo de malware', 'Un archivo comprimido', 'Una pista del disco'], 
-        correct: 'Un conjunto de sectores contiguos' 
-    },
-    summary: [
-        { title: 'Clúster' },
-        { text: 'Es la unidad mínima de asignación administrada por el sistema operativo. Puede contener uno o varios sectores.' }
-    ]
-})
-new Question({
-    title: "¿Cómo se llama la bobina que lee y escribe información en un disco magnético?",
-    options: { 
-        list: ['Cabeza', 'Brazo lógico', 'Sector primario', 'Transformador'], 
-        correct: 'Cabeza' 
-    },
-    summary: [
-        { title: 'Cabeza de lectura/escritura' },
-        { text: 'La cabeza genera campos magnéticos que permiten grabar y recuperar datos de la superficie del disco.' }
-    ]
-})
-new Question({
-    title: "¿En qué método de asignación de archivos aparece fragmentación externa?",
-    options: { 
-        list: ['Contigua', 'Encadenada', 'Indexada', 'Hash'], 
-        correct: 'Contigua' 
-    },
-    summary: [
-        { title: 'Fragmentación externa' },
-        { text: 'La asignación contigua requiere bloques juntos; cuando el disco se fragmenta, sobran huecos inútiles.' }
-    ]
-})
-new Question({
-    title: "¿Qué elemento contiene cada bloque en la asignación encadenada?",
-    options: { 
-        list: ['Un apuntador al siguiente bloque', 'Una tabla hash', 'Un índice global', 'Una clave de registro'], 
-        correct: 'Un apuntador al siguiente bloque' 
-    },
-    summary: [
-        { title: 'Asignación encadenada' },
-        { text: 'Cada bloque contiene un puntero que indica cuál es el siguiente bloque del archivo, formando una cadena.' }
-    ]
-})
-new Question({
-    title: "¿Qué son las pistas en un disco magnético?",
-    options: { 
-        list: ['Anillos concéntricos donde se almacenan datos', 'Columnas de bloques', 'Listas de permisos', 'Unidades de caché'], 
-        correct: 'Anillos concéntricos donde se almacenan datos' 
-    },
-    summary: [
-        { title: 'Pistas' },
-        { text: 'Una pista es un círculo completo donde el disco almacena información. Las pistas se dividen en sectores.' }
-    ]
-})
-new Question({
-    title: "¿Cuál es la unidad mínima que administra el sistema operativo?",
-    options: { 
-        list: ['Bloque o clúster', 'Sector', 'Pista', 'Cilindro'], 
-        correct: 'Bloque o clúster' 
-    },
-    summary: [
-        { title: 'Bloque / Clúster' },
-        { text: 'Aunque el disco usa sectores, el sistema operativo asigna y administra bloques (clústeres).' }
-    ]
-})
-new Question({
-    title: "¿Qué nivel del sistema de archivos administra los metadatos?",
-    options: { 
-        list: ['Sistema lógico de archivos', 'Control de E/S', 'Organización de archivos', 'Sistema básico de archivos'], 
-        correct: 'Sistema lógico de archivos' 
-    },
-    summary: [
-        { title: 'Sistema lógico de archivos' },
-        { text: 'Administra metadatos como permisos, propietarios, rutas y estructura de directorios.' }
-    ]
-})
-new Question({
-    title: "¿Cuál de los siguientes es un metadato de archivo?",
-    options: { 
-        list: ['Tamaño del archivo', 'El contenido del archivo', 'La salida estándar', 'El registro maestro de arranque'], 
-        correct: 'Tamaño del archivo' 
-    },
-    summary: [
-        { title: 'Metadatos' },
-        { text: 'Los metadatos describen un archivo: permisos, propietario, tamaño, fechas, etc.' }
-    ]
-})
-new Question({
-    title: "¿Qué tipo de archivo mantiene múltiples índices para facilitar búsquedas?",
-    options: { 
-        list: ['Archivo indexado', 'Pila', 'Hash', 'Secuencial'], 
-        correct: 'Archivo indexado' 
-    },
-    summary: [
-        { title: 'Archivo indexado' },
-        { text: 'Este tipo de organización mantiene varios índices (uno por tipo de búsqueda), útil para consultas directas.' }
-    ]
-})
-new Question({
-    title: "¿Qué se utiliza para determinar la posición de un registro en un archivo hash?",
-    options: { 
-        list: ['Una función hash', 'Una tabla secuencial', 'Un bloque contiguo', 'Un índice de dos niveles'], 
-        correct: 'Una función hash' 
-    },
-    summary: [
-        { title: 'Acceso directo (hash)' },
-        { text: 'El acceso hash calcula la ubicación del registro mediante una función hash aplicada a la clave.' }
-    ]
-})
-new Question({
-    title: "¿Qué permite un directorio dentro de un sistema de archivos?",
-    options: { 
-        list: ['Organizar archivos de manera lógica', 'Compactar bloques', 'Reducir el tamaño del disco físico', 'Eliminar sectores defectuosos'], 
-        correct: 'Organizar archivos de manera lógica' 
-    },
-    summary: [
-        { title: 'Directorios' },
-        { text: 'Los directorios permiten organizar archivos sin conocer su ubicación física, solo la lógica.' }
-    ]
-})
-new Question({
-    title: "¿Qué estructura permite que un archivo aparezca en múltiples directorios?",
-    options: { 
-        list: ['Grafo acíclico', 'Árbol', 'Archivo secuencial', 'Hash'], 
-        correct: 'Grafo acíclico' 
-    },
-    summary: [
-        { title: 'Grafo acíclico' },
-        { text: 'Un grafo acíclico permite enlaces múltiples hacia el mismo archivo mediante enlaces físicos o simbólicos.' }
-    ]
-})
-new Question({
-    title: "¿Qué atributo define quién puede leer o modificar un archivo?",
-    options: { 
-        list: ['Protección', 'Identificador', 'Tamaño', 'Tipo de archivo'], 
-        correct: 'Protección' 
-    },
-    summary: [
-        { title: 'Atributo de protección' },
-        { text: 'Incluye permisos de acceso, dueño, grupos, contraseñas y métodos de control.' }
-    ]
-})
-new Question({
-    title: "¿Qué hace un virus informático?",
-    options: { 
-        list: ['Se incrusta en un programa y se replica al ejecutarlo', 'Se envía solo por red', 'Solo consume memoria sin replicarse', 'Reemplaza archivos de arranque'], 
-        correct: 'Se incrusta en un programa y se replica al ejecutarlo' 
-    },
-    summary: [
-        { title: 'Virus' },
-        { text: 'Los virus requieren un programa huésped del que dependen para ejecutarse y replicarse.' }
-    ]
-})
-new Question({
-    title: "Las ACL pertenecen al objeto, mientras que ¿qué elemento pertenece al dominio?",
-    options: { 
-        list: ['Lista de capacidades', 'Lista de sectores', 'Lista de pistas', 'Tabla hash'], 
-        correct: 'Lista de capacidades'
-    },
-    summary: [
-        { title: 'ACL vs Capacidades' },
-        { text: 'La ACL lista qué dominios pueden acceder a un objeto. Las capacidades listan a qué objetos puede acceder un dominio.' },
-        { table: [['Tipo', 'Ubicación'], ['ACL', 'Por objeto'], ['Capacidades', 'Por dominio']] }
-    ]
-})
-new Question({
-    title: "¿Cuál es la unidad de transferencia tradicional en discos magnéticos?",
-    options: { 
-        list: ['512 bytes', '4 KB', '1 MB', '8 KB'], 
-        correct: '512 bytes' 
-    },
-    summary: [
-        { title: 'Tamaño del sector' },
-        { text: 'Históricamente los discos utilizan sectores de 512 bytes como unidad mínima de transferencia.' }
-    ]
-})
-new Question({
-    title: "¿Qué es un cilindro dentro de un disco?",
-    options: { 
-        list: ['Conjunto de pistas alineadas verticalmente', 'Un área de respaldo', 'Una región de caché', 'Un tipo de cluster'], 
-        correct: 'Conjunto de pistas alineadas verticalmente' 
-    },
-    summary: [
-        { title: 'Cilindros' },
-        { text: 'Un cilindro agrupa todas las pistas ubicadas a la misma distancia del eje en cada plato del disco.' }
-    ]
-})
-new Question({
-    title: "¿Qué es el factor de intercalación en discos magnéticos?",
-    options: { 
-        list: ['Separación lógica entre sectores para mejorar lectura', 'Fragmentación del disco', 'Un tipo de compresión', 'Método de asignación física'], 
-        correct: 'Separación lógica entre sectores para mejorar lectura' 
-    },
-    summary: [
-        { title: 'Intercalación' },
-        { text: 'Los sectores no siempre se numeran consecutivamente; se intercalan para que la cabeza pueda leerlos a tiempo.' }
-    ]
-})
-new Question({
-    title: "¿En qué método de asignación se requiere compactar el disco periódicamente?",
-    options: { 
-        list: ['Asignación contigua', 'Asignación encadenada', 'Asignación indexada', 'Hash'], 
-        correct: 'Asignación contigua' 
-    },
-    summary: [
-        { title: 'Compactación' },
-        { text: 'La contigua sufre fragmentación externa, por lo que debe compactarse para unir huecos y recuperar espacio.' }
-    ]
-})
-new Question({
-    title: "En la asignación contigua, ¿qué guarda la tabla de asignación?",
-    options: { 
-        list: ['Bloque inicial y longitud', 'Puntero al siguiente bloque', 'Lista de índices', 'Función hash'], 
-        correct: 'Bloque inicial y longitud' 
-    },
-    summary: [
-        { title: 'Tabla de asignación contigua' },
-        { text: 'Solo necesita dos datos: dónde empieza el archivo y cuántos bloques ocupa.' }
-    ]
-})
-new Question({
-    title: "¿Qué módulo gestiona los bloques no asignados del sistema de archivos?",
-    options: { 
-        list: ['Gestor de espacio libre', 'ACL', 'Control de E/S', 'Cerrojo-llave'], 
-        correct: 'Gestor de espacio libre' 
-    },
-    summary: [
-        { title: 'Gestión de espacio libre' },
-        { text: 'El gestor asigna y libera bloques físicos según el sistema de archivos lo requiera.' }
-    ]
-})
-new Question({
-    title: "¿Qué es un campo dentro de un archivo?",
-    options: { 
-        list: ['Un único valor con tipo y longitud', 'Un grupo de registros', 'Un archivo comprimido', 'Un directorio'], 
-        correct: 'Un único valor con tipo y longitud' 
-    },
-    summary: [
-        { title: 'Campo' },
-        { text: 'Es la unidad básica de información dentro de un registro, por ejemplo: nombre, temperatura, fecha, etc.' }
-    ]
-})
-new Question({
-    title: "¿Cuándo puede un registro ser de longitud variable?",
-    options: { 
-        list: ['Cuando uno o más campos son variables', 'Cuando la pista cambia', 'Cuando el disco está fragmentado', 'Cuando se usa asignación contigua'], 
-        correct: 'Cuando uno o más campos son variables' 
-    },
-    summary: [
-        { title: 'Registros variables' },
-        { text: 'Si un campo es variable (como un nombre), el registro completo también cambia su tamaño.' }
-    ]
-})
-new Question({
-    title: "¿Qué elementos componen un archivo secuencial indexado?",
-    options: { 
-        list: ['Un índice y un archivo de desbordamiento', 'Un índice único', 'Una tabla hash', 'Un bloque raíz'], 
-        correct: 'Un índice y un archivo de desbordamiento' 
-    },
-    summary: [
-        { title: 'Secuencial indexado' },
-        { text: 'El índice permite acceso rápido; el archivo de desbordamiento guarda valores que no entran en el orden principal.' }
-    ]
-})
-new Question({
-    title: "¿Cuál es la función del archivo de desbordamiento en sistemas secuenciales indexados?",
-    options: { 
-        list: ['Guardar registros fuera de orden', 'Mejorar la seguridad', 'Almacenar permisos', 'Reducir el tamaño del índice'], 
-        correct: 'Guardar registros fuera de orden' 
-    },
-    summary: [
-        { title: 'Archivo de desbordamiento' },
-        { text: 'Los registros que no caben en la secuencia ordenada se almacenan allí para mantener la organización.' }
-    ]
-})
-new Question({
-    title: "¿Qué aspecto pertenece a la protección del sistema operativo?",
-    options: { 
-        list: ['Controlar el acceso interno a archivos', 'Detectar ataques externos', 'Cifrar la red', 'Respaldar la base de datos'], 
-        correct: 'Controlar el acceso interno a archivos' 
-    },
-    summary: [
-        { title: 'Protección' },
-        { text: 'La protección administra quién puede usar qué recursos dentro del sistema.' }
-    ]
-})
-new Question({
-    title: "¿Qué tipo de amenaza es una bomba lógica?",
-    options: { 
-        list: ['Código que se activa bajo condiciones específicas', 'Programa que se replica en red', 'Error humano accidental', 'Archivo incompleto'], 
-        correct: 'Código que se activa bajo condiciones específicas' 
-    },
-    summary: [
-        { title: 'Bomba lógica' },
-        { text: 'Se introduce en un programa y solo se ejecuta cuando ocurre un evento específico.' }
-    ]
-})
-new Question({
-    title: "¿Cuál es el principal efecto de un gusano en el sistema?",
-    options: { 
-        list: ['Consume recursos del sistema', 'Elimina la tabla de particiones', 'Apaga el sistema operativo', 'Cambia permisos de archivo'], 
-        correct: 'Consume recursos del sistema' 
-    },
-    summary: [
-        { title: 'Gusano' },
-        { text: 'Los gusanos no suelen destruir archivos, pero saturan red y memoria con sus copias.' }
-    ]
-})
-new Question({
-    title: "¿Qué representa una celda dentro de la matriz de acceso?",
-    options: { 
-        list: ['Los derechos de un dominio sobre un objeto', 'El tamaño del archivo', 'La ubicación del bloque físico', 'La clave del registro'], 
-        correct: 'Los derechos de un dominio sobre un objeto' 
-    },
-    summary: [
-        { title: 'Matriz de acceso' },
-        { text: 'Cada celda contiene los permisos (leer, escribir, ejecutar...) que un dominio tiene sobre un objeto.' },
-        { table: [['Dom/Obj', 'Archivo1', 'Impresora'], ['D1', 'leer/escribir', 'imprimir'], ['D2', 'leer', '—']] }
-    ]
-})
-new Question({
-    title: "¿Qué estructura utiliza el sistema FAT para registrar los bloques asignados a un archivo?",
-    options: { 
-        list: ['Una tabla de asignación de archivos', 'Un árbol B+', 'Un registro maestro', 'Un mapa de bits'], 
-        correct: 'Una tabla de asignación de archivos' 
-    },
-    summary: [
-        { title: 'FAT (File Allocation Table)' },
-        { text: 'FAT usa una tabla centralizada donde cada entrada apunta al siguiente clúster del archivo.' }
-    ]
-})
-new Question({
-    title: "¿Cuál de las siguientes es una limitación de FAT32?",
-    options: { 
-        list: ['Tamaño máximo de archivo de 4 GB', 'No soporta nombres largos', 'Es exclusivo de Linux', 'No puede usarse en USBs'], 
-        correct: 'Tamaño máximo de archivo de 4 GB' 
-    },
-    summary: [
-        { title: 'Límite de FAT32' },
-        { text: 'FAT32 no puede almacenar archivos mayores de 4 GB debido a su estructura de 32 bits.' }
-    ]
-})
-new Question({
-    title: "¿Qué componente central utiliza NTFS para almacenar metadatos de cada archivo?",
-    options: { 
-        list: ['MFT (Master File Table)', 'Tabla FAT', 'Superbloque', 'Árbol rojo-negro'], 
-        correct: 'MFT (Master File Table)' 
-    },
-    summary: [
-        { title: 'MFT' },
-        { text: 'La Master File Table contiene registros detallados de todos los archivos y directorios, incluyendo datos y metadatos.' }
-    ]
-})
-new Question({
-    title: "¿Qué característica distintiva tiene NTFS frente a FAT?",
-    options: { 
-        list: ['Permisos avanzados y journaling', 'Soporte limitado a 4 GB', 'No soporta compresión', 'No maneja metadatos'], 
-        correct: 'Permisos avanzados y journaling' 
-    },
-    summary: [
-        { title: 'Características NTFS' },
-        { text: 'NTFS permite control de acceso mediante ACLs, cifrado, compresión y journaling para recuperar errores.' }
-    ]
-})
-new Question({
-    title: "¿Qué estructura utiliza el sistema FAT para registrar los bloques asignados a un archivo?",
-    options: { 
-        list: ['Una tabla de asignación de archivos', 'Un árbol B+', 'Un registro maestro', 'Un mapa de bits'], 
-        correct: 'Una tabla de asignación de archivos' 
-    },
-    summary: [
-        { title: 'FAT (File Allocation Table)' },
-        { text: 'FAT usa una tabla centralizada donde cada entrada apunta al siguiente clúster del archivo.' }
-    ]
-})
-new Question({
-    title: "¿Cuál de las siguientes es una limitación de FAT32?",
-    options: { 
-        list: ['Tamaño máximo de archivo de 4 GB', 'No soporta nombres largos', 'Es exclusivo de Linux', 'No puede usarse en USBs'], 
-        correct: 'Tamaño máximo de archivo de 4 GB' 
-    },
-    summary: [
-        { title: 'Límite de FAT32' },
-        { text: 'FAT32 no puede almacenar archivos mayores de 4 GB debido a su estructura de 32 bits.' }
-    ]
-})
-new Question({
-    title: "¿Qué componente central utiliza NTFS para almacenar metadatos de cada archivo?",
-    options: { 
-        list: ['MFT (Master File Table)', 'Tabla FAT', 'Superbloque', 'Árbol rojo-negro'], 
-        correct: 'MFT (Master File Table)' 
-    },
-    summary: [
-        { title: 'MFT' },
-        { text: 'La Master File Table contiene registros detallados de todos los archivos y directorios, incluyendo datos y metadatos.' }
-    ]
-})
-new Question({
-    title: "¿Cuál es una capacidad avanzada del sistema Ext4?",
-    options: { 
-        list: ['Soporte para archivos de hasta 16 TB', 'Límite de 4 GB', 'Uso exclusivo en Windows', 'No usa journaling'], 
-        correct: 'Soporte para archivos de hasta 16 TB' 
-    },
-    summary: [
-        { title: 'Capacidad de Ext4' },
-        { text: 'Ext4 incrementa el tamaño máximo de archivo y volumen, alcanzando capacidades mucho mayores que Ext2 y Ext3.' }
-    ]
-})
-new Question({
-    title: "¿Qué representa un archivo dentro de un sistema operativo?",
-    options: { 
-        list: ['Una colección de datos manejada como una unidad', 'Un solo campo de datos', 'Un proceso en ejecución', 'Una memoria RAM temporal'], 
-        correct: 'Una colección de datos manejada como una unidad' 
-    },
-    summary: [
-        { title: 'Archivos' },
-        { text: 'Son abstracciones que almacenan información bajo un nombre o identificador.' }
-    ]
-})
-new Question({
-    title: "¿Cuál es una de las funciones principales de los archivos?",
-    options: { 
-        list: ['Almacenar datos de forma permanente', 'Aumentar la velocidad del CPU', 'Eliminar procesos', 'Controlar puertos USB'], 
-        correct: 'Almacenar datos de forma permanente' 
-    },
-    summary: [
-        { title: 'Función de los archivos' },
-        { text: 'Los archivos permiten guardar y organizar datos más allá de la memoria temporal.' }
-    ]
-})
-new Question({
-    title: "¿Cuál de los siguientes es un atributo de archivo?",
-    options: { 
-        list: ['Permisos', 'Frecuencia del CPU', 'Tipo de procesador', 'Número de núcleos'], 
-        correct: 'Permisos' 
-    },
-    summary: [
-        { title: 'Atributos' },
-        { text: 'Entre los atributos están: nombre, tamaño, fecha, permisos y ubicación.' }
-    ]
-})
-new Question({
-    title: "¿Qué es un campo dentro de la estructura de un archivo?",
-    options: { 
-        list: ['Un dato individual con un valor único', 'Una colección de registros', 'Una partición del disco', 'Un directorio'], 
-        correct: 'Un dato individual con un valor único' 
-    },
-    summary: [
-        { title: 'Campo' },
-        { text: 'Es la unidad mínima de datos, como: nombre, edad, fecha, etc.' }
-    ]
-})
-new Question({
-    title: "¿Cómo se define un registro dentro de un archivo?",
-    options: { 
-        list: ['Conjunto de campos relacionados', 'Un bloque físico del disco', 'El nombre del archivo', 'Una copia del archivo'], 
-        correct: 'Conjunto de campos relacionados' 
-    },
-    summary: [
-        { title: 'Registro' },
-        { text: 'Agrupa varios campos y puede representar una “fila” de información.' }
-    ]
-})
-new Question({
-    title: "¿Qué es un archivo dentro de la estructura lógica?",
-    options: { 
-        list: ['Una colección de registros', 'Un sector del disco', 'Un bloque RAM', 'Una tabla de procesos'], 
-        correct: 'Una colección de registros' 
-    },
-    summary: [
-        { title: 'Archivo' },
-        { text: 'Un archivo es un conjunto de registros que el sistema operativo trata como una unidad.' }
-    ]
-})
-new Question({
-    title: "¿Qué permite la administración de archivos del sistema operativo?",
-    options: { 
-        list: ['Crear, borrar, copiar y mover archivos', 'Ejecutar procesos del CPU', 'Regular temperatura del hardware', 'Administrar puertos de red'], 
-        correct: 'Crear, borrar, copiar y mover archivos' 
-    },
-    summary: [
-        { title: 'Administración de archivos' },
-        { text: 'Incluye todas las operaciones realizadas por el usuario y la implementación interna del SO.' }
-    ]
-})
-new Question({
-    title: "¿Cómo se organiza físicamente un disco?",
-    options: { 
-        list: ['Platos, superficies, pistas, sectores', 'RAM, ROM y cache', 'Archivos, carpetas, permisos', 'Pines, cables, puertos'], 
-        correct: 'Platos, superficies, pistas, sectores' 
-    },
-    summary: [
-        { title: 'Organización física' },
-        { text: 'El disco se compone de platos divididos en pistas y sectores donde se almacena la información.' }
-    ]
-})
-new Question({
-    title: "¿Qué es un cilindro dentro de un disco?",
-    options: { 
-        list: ['Conjunto de pistas alineadas verticalmente', 'Un bloque del sistema', 'Un directorio raíz', 'Un sector dañado'], 
-        correct: 'Conjunto de pistas alineadas verticalmente' 
-    },
-    summary: [
-        { title: 'Cilindros' },
-        { text: 'Todas las pistas ubicadas a la misma distancia del centro en cada plato forman un cilindro.' }
-    ]
-})
-new Question({
-    title: "¿Qué es un cluster?",
-    options: { 
-        list: ['Grupo de sectores', 'Archivo temporal', 'Método de compresión', 'Tipo de directorio'], 
-        correct: 'Grupo de sectores' 
-    },
-    summary: [
-        { title: 'Cluster' },
-        { text: 'Es la unidad mínima que administra el sistema operativo, compuesta por sectores.' }
-    ]
-})
-new Question({
-    title: "¿Qué ocurre si un archivo no llena por completo un bloque?",
-    options: { 
-        list: ['Se desperdicia espacio', 'El archivo se divide en RAM', 'El SO duplica el bloque', 'El bloque se encripta'], 
-        correct: 'Se desperdicia espacio' 
-    },
-    summary: [
-        { title: 'Bloques' },
-        { text: 'Los bloques se asignan completos; si el archivo ocupa menos, el resto queda sin utilizar.' }
-    ]
-})
-new Question({
-    title: "¿Cómo se representa una dirección física en un disco?",
-    options: { 
-        list: ['Cilindro, pista, sector', 'Archivo, carpeta, extensión', 'Sector, RAM, CPU', 'Inodo, bloque, carpeta'], 
-        correct: 'Cilindro, pista, sector' 
-    },
-    summary: [
-        { title: 'Dirección física' },
-        { text: 'Indica exactamente dónde se encuentra un dato en el disco.' }
-    ]
-})
-new Question({
-    title: "¿Qué contiene el sector de arranque (Boot) del disco?",
-    options: { 
-        list: ['Información para iniciar el SO', 'Todos los archivos del usuario', 'La tabla MFT', 'Los clusters vacíos'], 
-        correct: 'Información para iniciar el SO' 
-    },
-    summary: [
-        { title: 'Boot sector' },
-        { text: 'Define parámetros del volumen y datos esenciales para el arranque.' }
-    ]
-})
-new Question({
-    title: "¿Qué función cumple la FAT dentro de un volumen?",
-    options: { 
-        list: ['Mapa de ubicación de archivos', 'Área para instalar drivers', 'Sector de arranque alterno', 'Gestión de procesos'], 
-        correct: 'Mapa de ubicación de archivos' 
-    },
-    summary: [
-        { title: 'File Allocation Table' },
-        { text: 'Indica dónde está cada parte de cada archivo dentro de los clusters.' }
-    ]
-})
-new Question({
-    title: "¿Qué usa el sistema operativo para saber dónde están los bloques de un archivo?",
-    options: { 
-        list: ['Tablas de ubicación', 'Registros del CPU', 'Memoria caché', 'Las rutas relativas'], 
-        correct: 'Tablas de ubicación' 
-    },
-    summary: [
-        { title: 'Acceso a archivos' },
-        { text: 'Las tablas indican qué bloques están asignados y cuáles están libres.' }
-    ]
-})
-new Question({
-    title: "¿Para qué sirve el formato lógico de un disco?",
-    options: { 
-        list: ['Preparar las estructuras para leer y escribir datos', 'Aumentar la velocidad del procesador', 'Eliminar todos los archivos automáticamente', 'Cambiar el tamaño físico del disco'], 
-        correct: 'Preparar las estructuras para leer y escribir datos'
-    },
-    summary: [
-        { title: 'Formato lógico' },
-        { text: 'Crea las tablas, direcciones y configuraciones necesarias para que un sistema de archivos funcione correctamente.' }
-    ]
-})
-new Question({
-    title: "¿Qué contiene el directorio raíz en la estructura lógica del disco?",
-    options: { 
-        list: ['Referencias a archivos y subdirectorios', 'La tabla MFT completa', 'El contenido de todos los clusters', 'Los controladores del sistema'], 
-        correct: 'Referencias a archivos y subdirectorios'
-    },
-    summary: [
-        { title: 'Directorio raíz' },
-        { text: 'Es el primer nivel de la estructura de directorios y contiene entradas de archivos y carpetas.' }
-    ]
-})
-new Question({
-    title: "¿Dónde se almacenan físicamente los datos reales de los archivos?",
-    options: { 
-        list: ['En la zona de datos', 'En el sector de arranque', 'En el directorio raíz únicamente', 'En la tabla FAT'], 
-        correct: 'En la zona de datos'
-    },
-    summary: [
-        { title: 'Zona de datos' },
-        { text: 'Es el área del disco donde se guardan los contenidos reales de los archivos almacenados.' }
-    ]
-})
-new Question({
-    title: "¿Qué es un sector dentro de un disco?",
-    options: { 
-        list: ['La unidad mínima física de almacenamiento', 'Un archivo del sistema', 'Una carpeta especial', 'Un proceso del CPU'], 
-        correct: 'La unidad mínima física de almacenamiento'
-    },
-    summary: [
-        { title: 'Sector' },
-        { text: 'Es la parte más pequeña en la que un disco divide la información. Varios sectores forman un cluster.' }
-    ]
-})
-new Question({
-    title: "¿Cuál es una diferencia clave entre FAT y NTFS?",
-    options: { 
-        list: ['NTFS soporta seguridad avanzada mediante ACLs', 'FAT permite cifrado por hardware', 'FAT usa MFT y NTFS no', 'NTFS tiene un límite de 4 GB por archivo'], 
-        correct: 'NTFS soporta seguridad avanzada mediante ACLs'
-    },
-    summary: [
-        { title: 'NTFS vs FAT' },
-        { text: 'NTFS incluye permisos detallados, cifrado y journaling, mientras que FAT solo maneja atributos simples.' }
-    ]
-})
-new Question({
-    title: "¿Qué función principal cumple la tabla FAT dentro del sistema de archivos?",
+const examenConectividadRed = [
+  {
+    title: "¿Cuál es el objetivo principal del Modelo de Servicio de TI?",
     options: {
-        list: ['Registrar la cadena de clusters usados por cada archivo', 'Cifrar archivos del sistema', 'Comprimir carpetas', 'Crear particiones automáticas'],
-        correct: 'Registrar la cadena de clusters usados por cada archivo'
+      list: {
+        "Definir cómo se planifican, entregan, gestionan y mejoran los servicios de TI para satisfacer las necesidades del negocio": true,
+        "Solo instalar hardware de red de alta gama": false,
+        "Reducir al máximo los costos sin importar la calidad": false,
+        "Eliminar por completo el uso de protocolos estándar": false
+      }
     },
     summary: [
-        { title: 'FAT' },
-        { text: 'La FAT indica qué cluster sigue a cuál, formando la ruta completa de un archivo en el disco.' }
+      { title: "Respuesta correcta" },
+      { text: "El modelo de servicio de TI define cómo se planifican, entregan, gestionan y mejoran los servicios de TI dentro de una organización para satisfacer sus necesidades." }
     ]
-})
-new Question({
-    title: "¿Cuál es una limitación importante del sistema FAT tradicional?",
+  },
+  {
+    title: "¿Cuál de los siguientes NO es un componente clave del Modelo de Servicio de TI según el documento?",
     options: {
-        list: ['Tamaño máximo de partición de 4 GB', 'No soporta nombres largos', 'No permite discos duros', 'Requiere MFT'],
-        correct: 'Tamaño máximo de partición de 4 GB'
+      list: {
+        "Aplicaciones y Servicios": false,
+        "Infraestructura de Red": false,
+        "Marketing Digital": true,
+        "Seguridad de la Información": false
+      }
     },
     summary: [
-        { title: 'FAT original' },
-        { text: 'Las primeras versiones de FAT solo podían manejar particiones de hasta 4 GB.' }
+      { text: "Los componentes clave son: Aplicaciones y Servicios, Infraestructura de Red, Protocolos y Estándares, Seguridad de la Información, y Gestión y Soporte." }
     ]
-})
-new Question({
-    title: "¿Cuál es el tamaño máximo de un archivo individual en FAT32?",
+  },
+  {
+    title: "¿Qué protocolo se menciona como fundamental para el funcionamiento de Internet?",
     options: {
-        list: ['4 GB', '2 TB', '16 TB', '1 GB'],
-        correct: '4 GB'
+      list: {
+        "TCP/IP": true,
+        "HTTP": false,
+        "FTP": false,
+        "SNMP": false
+      }
     },
     summary: [
-        { title: 'Límite FAT32' },
-        { text: 'FAT32 solo soporta archivos individuales de hasta 4 GB debido al tamaño de sus punteros de dirección.' }
+      { text: "El protocolo TCP/IP es fundamental para el funcionamiento de Internet (sección 1.1)." }
     ]
-})
-new Question({
-    title: "¿Cuál es el tamaño de sector común en FAT32?",
+  },
+  {
+    title: "Antes de diseñar la red, ¿qué paso es absolutamente necesario según el documento?",
     options: {
-        list: ['4 KB', '64 KB', '512 B', '1 KB'],
-        correct: '4 KB'
+      list: {
+        "Evaluación de los requisitos del negocio": true,
+        "Comprar los routers más caros": false,
+        "Instalar Windows Server": false,
+        "Configurar VLANs": false
+      }
     },
     summary: [
-        { title: 'Sector típico' },
-        { text: 'En FAT32 el tamaño de sector más común es 4 KB, dependiendo del dispositivo.' }
+      { text: "Es necesario comprender las necesidades del negocio para diseñar una red adecuada (sección 2)." }
     ]
-})
-new Question({
-    title: "¿Qué estructura central utiliza NTFS para gestionar todos los archivos?",
+  },
+  {
+    title: "¿Qué ejemplo se da de un servicio crítico para el negocio?",
     options: {
-        list: ['MFT (Master File Table)', 'Tabla FAT', 'Inodos', 'Cluster Map'],
-        correct: 'MFT (Master File Table)'
+      list: {
+        "Sistema de punto de venta en un supermercado": true,
+        "Reproductor de música en las PCs de los empleados": false,
+        "Juego en línea corporativo": false,
+        "Red social interna": false
+      }
     },
     summary: [
-        { title: 'MFT' },
-        { text: 'La MFT contiene un registro por cada archivo, incluyendo metadatos, permisos y ubicación física.' }
+      { text: "Ejemplo dado: Un sistema de punto de venta en un supermercado que debe estar operativo en todo momento (2.1)." }
     ]
-})
+  },
+  {
+    title: "¿Qué tipo de aplicaciones requieren especialmente baja latencia?",
+    options: {
+      list: {
+        "Aplicaciones de trading financiero": true,
+        "Envío de correos electrónicos masivos": false,
+        "Backup nocturno": false,
+        "Descarga de actualizaciones de software": false
+      }
+    },
+    summary: [
+      { text: "En aplicaciones de trading financiero, incluso milisegundos de latencia pueden significar pérdidas significativas (3.2)." }
+    ]
+  },
+  {
+    title: "¿Para qué se utiliza QoS (Calidad de Servicio)?",
+    options: {
+      list: {
+        "Priorizar ciertos tipos de tráfico en la red": true,
+        "Encriptar automáticamente todo el tráfico": false,
+        "Asignar direcciones IP": false,
+        "Detectar virus": false
+      }
+    },
+    summary: [
+      { text: "QoS permite priorizar el tráfico de voz sobre el correo electrónico para evitar cortes durante llamadas VoIP (3.3)." }
+    ]
+  },
+  {
+    title: "¿Cuál es la topología más común en oficinas pequeñas según el documento?",
+    options: {
+      list: {
+        "Estrella": true,
+        "Anillo": false,
+        "Malla completa": false,
+        "Árbol": false
+      }
+    },
+    summary: [
+      { text: "Una red en estrella es común en oficinas pequeñas donde todos los dispositivos se conectan a un switch central (4.1)." }
+    ]
+  },
+  {
+    title: "¿Qué permite crear VLANs?",
+    options: {
+      list: {
+        "Segmentación lógica sin importar la ubicación física": true,
+        "Segmentación física obligatoria": false,
+        "Mayor consumo de ancho de banda": false,
+        "Eliminación total de switches": false
+      }
+    },
+    summary: [
+      { text: "Ejemplo: Crear una VLAN para el departamento de finanzas y otra para recursos humanos (4.2)." }
+    ]
+  },
+  {
+    title: "¿Cuál de los siguientes es un protocolo de redundancia de gateway mencionado?",
+    options: {
+      list: {
+        "HSRP (Hot Standby Router Protocol)": true,
+        "DHCP": false,
+        "DNS": false,
+        "SNMP": false
+      }
+    },
+    summary: [
+      { text: "HSRP y VRRP son protocolos de redundancia que permiten conmutación por error entre routers (4.3)." }
+    ]
+  },
+  {
+    title: "¿Qué protocolo se recomienda para streaming de video por su mayor velocidad?",
+    options: {
+      list: {
+        "UDP": true,
+        "TCP": false,
+        "ICMP": false,
+        "OSPF": false
+      }
+    },
+    summary: [
+      { text: "UDP es común en streaming de video porque prioriza velocidad sobre confiabilidad (5.2)." }
+    ]
+  },
+  {
+    title: "¿Cuál es el protocolo de enrutamiento estándar abierto más utilizado en redes internas grandes?",
+    options: {
+      list: {
+        "OSPF": true,
+        "RIP": false,
+        "EIGRP (solo Cisco)": false,
+        "BGP": false
+      }
+    },
+    summary: [
+      { text: "OSPF (Open Shortest Path First) se menciona como protocolo estándar para enrutamiento interno (5.2)." }
+    ]
+  },
+  {
+    title: "¿Qué tecnología permite usar máscaras de subred de diferentes longitudes en la misma red?",
+    options: {
+      list: {
+        "VLSM (Variable Length Subnet Mask)": true,
+        "FLSM": false,
+        "NAT": false,
+        "PAT": false
+      }
+    },
+    summary: [
+      { text: "VLSM permite un subnetting más flexible asignando máscaras según las necesidades reales (6.2)." }
+    ]
+  },
+  {
+    title: "¿Qué dirección es un ejemplo típico de IPv6?",
+    options: {
+      list: {
+        "2001:0db8:85a3:0000:0000:8a2e:0370:7334": true,
+        "192.168.1.1": false,
+        "10.0.0.138": false,
+        "172.16.254.1": false
+      }
+    },
+    summary: [
+      { text: "Ejemplo oficial del documento en la sección 6.1." }
+    ]
+  },
+  {
+    title: "¿Qué dispositivo o software controla el tráfico entrante y saliente basado en reglas de seguridad?",
+    options: {
+      list: {
+        "Firewall": true,
+        "Switch": false,
+        "Router": false,
+        "Access Point": false
+      }
+    },
+    summary: [
+      { text: "Los firewalls son barreras de seguridad que monitorean y filtran el tráfico de red (7.1)." }
+    ]
+  },
+  {
+    title: "¿Qué sistema bloquea automáticamente los ataques detectados?",
+    options: {
+      list: {
+        "IPS (Intrusion Prevention System)": true,
+        "IDS (solo detecta)": false,
+        "Firewall estatal": false,
+        "Antivirus": false
+      }
+    },
+    summary: [
+      { text: "IPS previene activamente los ataques detectados, mientras que IDS solo alerta (7.1)." }
+    ]
+  },
+  {
+    title: "¿Qué protocolo se utiliza para conexiones seguras de acceso remoto desde casa a la oficina?",
+    options: {
+      list: {
+        "VPN": true,
+        "RDP": false,
+        "Telnet": false,
+        "SSH": false
+      }
+    },
+    summary: [
+      { text: "VPN permite crear una red privada segura sobre Internet pública (8.2)." }
+    ]
+  },
+  {
+    title: "¿Qué servicio traduce nombres como www.google.com a direcciones IP?",
+    options: {
+      list: {
+        "DNS": true,
+        "DHCP": false,
+        "NAT": false,
+        "SNMP": false
+      }
+    },
+    summary: [
+      { text: "DNS (Domain Name System) permite usar nombres legibles en lugar de direcciones numéricas (8.1)." }
+    ]
+  },
+  {
+    title: "¿Cuál de estos es un ejemplo de Software as a Service (SaaS)?",
+    options: {
+      list: {
+        "Salesforce": true,
+        "Amazon EC2": false,
+        "Microsoft Azure Virtual Machines": false,
+        "Servidor propio con Windows Server": false
+      }
+    },
+    summary: [
+      { text: "Salesforce es un ejemplo clásico de SaaS: software hospedado y gestionado por un proveedor externo (8.3)." }
+    ]
+  },
+  {
+    title: "¿Qué protocolo se usa comúnmente para monitorear dispositivos de red (CPU, memoria, interfaces)?",
+    options: {
+      list: {
+        "SNMP": true,
+        "ICMP": false,
+        "OSPF": false,
+        "BGP": false
+      }
+    },
+    summary: [
+      { text: "SNMP (Simple Network Management Protocol) es el estándar para monitoreo de dispositivos (9.1)." }
+    ]
+  },
+  {
+    title: "¿Qué comando muestra la ruta completa que siguen los paquetes hasta el destino?",
+    options: {
+      list: {
+        "Traceroute": true,
+        "Ping": false,
+        "Ipconfig": false,
+        "Netstat": false
+      }
+    },
+    summary: [
+      { text: "Traceroute muestra la ruta que siguen los paquetes y ayuda a diagnosticar problemas de enrutamiento (10.1)." }
+    ]
+  },
+  {
+    title: "¿Qué tipo de prueba simula ataques reales para encontrar vulnerabilidades?",
+    options: {
+      list: {
+        "Pruebas de penetración (Pentesting)": true,
+        "Pruebas de estrés": false,
+        "Pruebas de carga": false,
+        "Pruebas unitarias": false
+      }
+    },
+    summary: [
+      { text: "El pentesting consiste en simular ataques controlados para identificar debilidades de seguridad (10.2)." }
+    ]
+  },
+  {
+    title: "¿Qué documento incluye instrucciones paso a paso para realizar tareas específicas de forma estándar?",
+    options: {
+      list: {
+        "Procedimientos Operativos Estándar (SOP)": true,
+        "Diagrama de red": false,
+        "Política de contraseñas": false,
+        "Manual de usuario": false
+      }
+    },
+    summary: [
+      { text: "Los SOP garantizan consistencia y calidad en las operaciones (11.1)." }
+    ]
+  },
+  {
+    title: "¿Qué tecnología permite programar y gestionar la red de forma centralizada mediante software?",
+    options: {
+      list: {
+        "SDN (Software Defined Networking)": true,
+        "VLAN tradicional": false,
+        "Cableado estructurado": false,
+        "Wi-Fi 6": false
+      }
+    },
+    summary: [
+      { text: "SDN es una de las innovaciones tecnológicas mencionadas para el futuro de las redes (12)." }
+    ]
+  },
+  {
+    title: "En el diseño de red, ¿qué característica permite añadir fácilmente nuevos usuarios y dispositivos sin degradar el rendimiento?",
+    options: {
+      list: {
+        "Escalabilidad": true,
+        "Seguridad": false,
+        "Redundancia": false,
+        "Latencia": false
+      }
+    },
+    summary: [
+      { text: "La escalabilidad es la capacidad de una red para crecer y adaptarse sin perder rendimiento (12)." }
+    ]
+  },
+  {
+    title: "¿Qué protocolo asigna automáticamente direcciones IP a los dispositivos cuando se conectan a la red?",
+    options: {
+      list: {
+        "DHCP": true,
+        "DNS": false,
+        "ARP": false,
+        "ICMP": false
+      }
+    },
+    summary: [
+      { text: "DHCP simplifica la gestión de direcciones IP en redes dinámicas (8.1)." }
+    ]
+  },
+  {
+    title: "¿Qué tipo de redundancia se logra teniendo dos conexiones a Internet de diferentes proveedores?",
+    options: {
+      list: {
+        "Redundancia de enlace o proveedor": true,
+        "Redundancia de fuente de poder": false,
+        "Redundancia de disco (RAID)": false,
+        "Redundancia de aire acondicionado": false
+      }
+    },
+    summary: [
+      { text: "Ejemplo clásico de redundancia: tener dos conexiones a Internet de diferentes proveedores (4.3)." }
+    ]
+  },
+  {
+    title: "¿Qué estándar de cableado se recomienda para conexiones de alta velocidad entre edificios?",
+    options: {
+      list: {
+        "Fibra óptica": true,
+        "Cat5e": false,
+        "Cat6": false,
+        "Coaxial": false
+      }
+    },
+    summary: [
+      { text: "Se recomienda fibra óptica para conectar edificios separados en un campus empresarial (5.1)." }
+    ]
+  },
+  {
+    title: "¿Qué mide el 'tiempo de inactividad' (downtime)?",
+    options: {
+      list: {
+        "El periodo durante el cual un sistema no está operativo": true,
+        "La velocidad de la red": false,
+        "El ancho de banda disponible": false,
+        "La cantidad de usuarios conectados": false
+      }
+    },
+    summary: [
+      { text: "Downtime es una métrica clave de disponibilidad y fiabilidad de la red (9.2)." }
+    ]
+  },
+  {
+    title: "Según el documento, ¿qué debe hacerse antes de cualquier cambio importante en la red?",
+    options: {
+      list: {
+        "Seguir un proceso de control de cambios con aprobación": true,
+        "Hacerlo directamente en horario de oficina": false,
+        "Avisar solo después del cambio": false,
+        "No es necesario documentar": false
+      }
+    },
+    summary: [
+      { text: "El control de cambios asegura que las modificaciones se realicen de forma controlada y documentada (9.3)." }
+    ]
+  }
+];
+const examenUsoConectividadOrganizacional = [
+  {
+    title: "¿Quién utiliza una VPN corporativa para realizar mantenimiento de servidores desde su casa?",
+    options: { list: { "Empleado de soporte técnico": true, "Gerente de proyectos": false, "Empleado de ventas": false, "Ingeniero de mantenimiento": false } },
+    summary: [
+      { title: "Caso 1" },
+      { text: "Actor: Empleado de soporte técnico. Descripción: Se conecta remotamente desde casa utilizando VPN para mantenimiento de servidores." }
+    ]
+  },
+  {
+    title: "¿Qué tecnología permite que los sensores de máquinas envíen datos en tiempo real para prevenir fallos?",
+    options: { list: { "Red IoT para sensores industriales": true, "VPN": false, "Office 365": false, "Firewall": false } },
+    summary: [
+      { title: "Caso 2" },
+      { text: "Actor: Ingeniero de mantenimiento. Objetivo: Monitoreo remoto de equipos de producción mediante IoT y alertas automáticas." }
+    ]
+  },
+  {
+    title: "¿Qué sistema integra datos financieros, de inventario y ventas para generar reportes en tiempo real?",
+    options: { list: { "Sistema ERP": true, "Office 365": false, "Salesforce": false, "SD-WAN": false } },
+    summary: [
+      { title: "Caso 3" },
+      { text: "Actor: Departamento de Finanzas. El ERP centraliza la información para mejorar la toma de decisiones." }
+    ]
+  },
+  {
+    title: "¿Qué herramienta permite que un equipo edite documentos simultáneamente desde distintas ubicaciones?",
+    options: { list: { "Microsoft OneDrive y Office 365": true, "Zoom": false, "Firewall": false, "Wi-Fi corporativa": false } },
+    summary: [
+      { title: "Caso 4" },
+      { text: "Actor: Equipo de proyectos. Objetivo: Colaboración eficiente sin importar la ubicación física." }
+    ]
+  },
+  {
+    title: "¿Qué dispositivo filtra el tráfico entrante y saliente para proteger la red de accesos no autorizados?",
+    options: { list: { "Firewall corporativo": true, "Switch": false, "Router": false, "Access Point": false } },
+    summary: [
+      { title: "Caso 5" },
+      { text: "Actor: Departamento de Seguridad Informática. El firewall asegura integridad y confidencialidad de los datos." }
+    ]
+  },
+  {
+    title: "¿Quién usa la red Wi-Fi corporativa para acceder al CRM desde un dispositivo móvil dentro de la oficina?",
+    options: { list: { "Empleado de ventas": true, "Empleado de soporte técnico": false, "Gerente de proyectos": false, "Administrador de red": false } },
+    summary: [
+      { title: "Caso 6" },
+      { text: "Objetivo: Acceso rápido a información de clientes desde cualquier punto de la oficina." }
+    ]
+  },
+  {
+    title: "¿Qué tipo de red conecta sucursales ubicadas en distintas ciudades?",
+    options: { list: { "Red WAN": true, "Red LAN": false, "Red VLAN": false, "Red IoT": false } },
+    summary: [
+      { title: "Caso 7" },
+      { text: "Actor: Departamento de TI. Permite transferencia segura de datos entre oficinas." }
+    ]
+  },
+  {
+    title: "¿Qué plataformas se mencionan para organizar reuniones virtuales con socios internacionales?",
+    options: { list: { "Zoom y Google Meet": true, "Salesforce": false, "Nagios": false, "OneDrive": false } },
+    summary: [
+      { title: "Caso 8" },
+      { text: "Actor: Gerente de proyectos. Facilita comunicación global sin desplazamientos." }
+    ]
+  },
+  {
+    title: "¿Para qué se configuran VLANs en la red corporativa?",
+    options: { list: { "Separar el tráfico entre departamentos": true, "Aumentar el ancho de banda total": false, "Eliminar contraseñas": false, "Reemplazar el firewall": false } },
+    summary: [
+      { title: "Caso 9" },
+      { text: "Actor: Administrador de red. Mejora seguridad y eficiencia segmentando comunicaciones." }
+    ]
+  },
+  {
+    title: "¿Qué herramientas utiliza el ingeniero de redes para detectar cuellos de botella?",
+    options: { list: { "Nagios y SolarWinds": true, "Zoom": false, "Office 365": false, "Salesforce": false } },
+    summary: [
+      { title: "Caso 10" },
+      { text: "Objetivo: Identificar y solucionar problemas antes de que afecten a los usuarios." }
+    ]
+  },
+  {
+    title: "¿Qué protocolo de autenticación verifica la identidad del usuario mediante un servidor RADIUS?",
+    options: { list: { "802.1X": true, "802.11ac": false, "802.3": false, "SSL": false } },
+    summary: [
+      { title: "Caso 11" },
+      { text: "Actor: Empleado de investigación. Garantiza que solo usuarios autorizados accedan a la red." }
+    ]
+  },
+  {
+    title: "¿Qué se implementa para conectar de forma segura oficinas en diferentes países?",
+    options: { list: { "VPN corporativa entre filiales internacionales": true, "Wi-Fi pública": false, "Red WAN sin cifrar": false, "IoT": false } },
+    summary: [
+      { title: "Caso 12" },
+      { text: "Actor: Administrador de TI. Asegura integridad y confidencialidad de datos entre ubicaciones dispersas." }
+    ]
+  },
+  {
+    title: "¿Dónde se realizan respaldos automáticos de datos críticos para protegerlos contra desastres?",
+    options: { list: { "Servicios en la nube (AWS, Google Cloud)": true, "Disco duro local": false, "USB": false, "Servidor físico sin respaldo": false } },
+    summary: [
+      { title: "Caso 13" },
+      { text: "Actor: Responsable de TI. Protege datos frente a pérdidas locales." }
+    ]
+  },
+  {
+    title: "¿Qué modelo de servicio permite acceder a Salesforce o HubSpot sin instalar nada localmente?",
+    options: { list: { "SaaS (Software as a Service)": true, "IaaS": false, "PaaS": false, "On-premise": false } },
+    summary: [
+      { title: "Caso 14" },
+      { text: "Actor: Empleados de marketing. Facilita acceso a herramientas de negocio en la nube." }
+    ]
+  },
+  {
+    title: "¿Qué tecnología optimiza dinámicamente el tráfico entre sucursales según las necesidades?",
+    options: { list: { "SD-WAN": true, "VPN tradicional": false, "VLAN": false, "Firewall": false } },
+    summary: [
+      { title: "Caso 15" },
+      { text: "Actor: Administrador de redes. Mejora rendimiento y uso eficiente del ancho de banda." }
+    ]
+  },
+  {
+    title: "¿Cuál es el objetivo principal de usar VPN para acceso remoto?",
+    options: { list: { "Acceso seguro y encriptado a los sistemas": true, "Mayor velocidad de Internet": false, "Reducir costos de electricidad": false, "Evitar usar contraseñas": false } },
+    summary: [
+      { text: "Caso 1: Asegurar acceso seguro y encriptado desde casa." }
+    ]
+  },
+  {
+    title: "¿Qué beneficio aporta el ERP a la toma de decisiones?",
+    options: { list: { "Centralización de información en tiempo real": true, "Eliminación total de papel": false, "Reducción de empleados": false, "Aumento automático de ventas": false } },
+    summary: [
+      { text: "Caso 3: Permite generar reportes en tiempo real para decisiones informadas." }
+    ]
+  },
+  {
+    title: "¿Por qué es útil la red Wi-Fi corporativa para empleados de ventas?",
+    options: { list: { "Acceso rápido al CRM desde cualquier punto de la oficina": true, "Mejor calidad de audio en llamadas": false, "Mayor almacenamiento local": false, "Eliminación de cables": false } },
+    summary: [
+      { text: "Caso 6: Facilita movilidad dentro de la oficina." }
+    ]
+  },
+  {
+    title: "¿Qué ventaja ofrece SD-WAN sobre una WAN tradicional?",
+    options: { list: { "Optimización dinámica del tráfico y priorización": true, "Menor costo de hardware": false, "Eliminación total de latencia": false, "Sin necesidad de Internet": false } },
+    summary: [
+      { text: "Caso 15: Prioriza tráfico según necesidades reales." }
+    ]
+  },
+  {
+    title: "¿Qué protege principalmente el firewall corporativo?",
+    options: { list: { "Integridad y confidencialidad de los datos": true, "Velocidad de descarga": false, "Duración de batería de laptops": false, "Calidad de impresión": false } },
+    summary: [
+      { text: "Caso 5: Previene ataques y accesos no autorizados." }
+    ]
+  },
+  {
+    title: "¿Quién organiza reuniones virtuales internacionales usando Zoom o Google Meet?",
+    options: { list: { "Gerente de proyectos": true, "Empleado de ventas": false, "Ingeniero de mantenimiento": false, "Responsable de TI": false } },
+    summary: [
+      { text: "Caso 8" }
+    ]
+  },
+  {
+    title: "¿Qué aplicaciones SaaS usan los empleados de marketing en el documento?",
+    options: { list: { "Salesforce y HubSpot": true, "Nagios y SolarWinds": false, "AWS y Google Cloud": false, "OneDrive y Office 365": false } },
+    summary: [
+      { text: "Caso 14: Gestión de clientes y campañas publicitarias." }
+    ]
+  },
+  {
+    title: "¿Qué permite la autenticación 802.1X?",
+    options: { list: { "Verificar identidad antes de dar acceso a la red": true, "Aumentar velocidad Wi-Fi": false, "Asignar direcciones IP": false, "Crear VLANs automáticamente": false } },
+    summary: [
+      { text: "Caso 11: Solo usuarios autorizados acceden a la red." }
+    ]
+  },
+  {
+    title: "¿Cuál es el objetivo del almacenamiento en la nube para respaldos?",
+    options: { list: { "Proteger datos contra pérdidas locales o desastres": true, "Reducir espacio en oficina": false, "Mejorar velocidad de Internet": false, "Eliminar contraseñas": false } },
+    summary: [
+      { text: "Caso 13" }
+    ]
+  },
+  {
+    title: "¿Qué mejora la separación de tráfico con VLANs?",
+    options: { list: { "Seguridad y eficiencia de la red": true, "Velocidad de Internet externa": false, "Capacidad de almacenamiento": false, "Calidad de videoconferencias": false } },
+    summary: [
+      { text: "Caso 9: Segmentación por departamentos." }
+    ]
+  }
+];
+const examenFirmasDigitales = [
+  {
+    title: "¿Cuál es el principal desafío al reemplazar las firmas manuscritas por digitales?",
+    options: { list: { "Idear un método alternativo que sea imposible de falsificar": true, "Hacer que sea más lento que la firma física": false, "Eliminar por completo el uso de claves": false, "Que no requiera autenticación": false } },
+    summary: [
+      { title: "Problema de Reemplazo" },
+      { text: "Dificultad principal: Idear un método alternativo a las firmas físicas que sea seguro y confiable (diapositiva 3)." }
+    ]
+  },
+  {
+    title: "¿Cuáles son los tres requisitos esenciales de cualquier sistema de firma digital?",
+    options: { list: { "1. Verificación de identidad, 2. No repudio, 3. Prevención de elaboración del mensaje por el receptor": true, "Velocidad, bajo costo y compatibilidad con papel": false, "Solo autenticación y cifrado": false, "Solo no repudio": false } },
+    summary: [
+      { text: "Requisitos esenciales: 1. Verificación de identidad del transmisor, 2. No repudio, 3. Prevención de que el receptor elabore el mensaje (diapositiva 3-4)." }
+    ]
+  },
+  {
+    title: "¿Qué significa 'no repudio' en el contexto de firmas digitales?",
+    options: { list: { "El emisor no puede negar haber enviado o firmado el mensaje": true, "El receptor no puede leer el mensaje": false, "El mensaje se puede modificar después de firmado": false, "El banco puede negar la transacción": false } },
+    summary: [
+      { text: "No repudio = el emisor no puede negar la autoría del mensaje (ejemplo clásico: cliente ordena compra de oro y luego niega la orden)." }
+    ]
+  },
+  {
+    title: "En el esquema de firmas de clave simétrica, ¿quién es la autoridad central confiable?",
+    options: { list: { "BB (Big Brother o autoridad central confiable)": true, "El propio receptor Bob": false, "El gobierno de Internet": false, "No existe ninguna": false } },
+    summary: [
+      { text: "Existe una autoridad central confiable (BB) que conoce todas las claves secretas de los usuarios (diapositiva 10)." }
+    ]
+  },
+  {
+    title: "¿Qué gran desventaja tiene el esquema de firma digital con clave simétrica?",
+    options: { list: { "La autoridad central (BB) puede leer todos los mensajes y firmar en nombre de cualquiera": true, "Es demasiado lento": false, "Requiere claves públicas": false, "No permite no repudio": false } },
+    summary: [
+      { text: "Problema estructural: el BB puede leer todo y falsificar firmas. Se le llama 'Gran Hermano' por esta razón (diapositiva 18)." }
+    ]
+  },
+  {
+    title: "¿Qué algoritmo es el estándar de facto para firmas digitales según el capítulo?",
+    options: { list: { "RSA": true, "DSS/DSA": false, "El Gamal": false, "AES": false } },
+    summary: [
+      { text: "El algoritmo RSA es el estándar de facto para firmas digitales (diapositiva 20 y 24)." }
+    ]
+  },
+  {
+    title: "En criptografía de clave pública, ¿con qué clave firma Alice el mensaje?",
+    options: { list: { "Con su clave privada (DA)": true, "Con la clave pública de Bob": false, "Con la clave privada de Bob": false, "Con la clave pública de ella misma": false } },
+    summary: [
+      { text: "Alice firma usando su clave privada DA. Cualquier persona puede verificar con su clave pública EA (diapositiva 20)." }
+    ]
+  },
+  {
+    title: "Si Alice niega haber enviado un mensaje firmado con clave pública, ¿qué puede hacer Bob en un juicio?",
+    options: { list: { "Presentar el mensaje P y la firma DA(P); el juez verifica con la clave pública EA de Alice": true, "Llamar al BB": false, "Pedir la clave privada de Alice": false, "No puede probar nada": false } },
+    summary: [
+      { text: "Bob presenta P y DA(P). El juez aplica EA y comprueba que coincide (diapositiva 22)." }
+    ]
+  },
+  {
+    title: "¿Cuál es la función básica de un firewall?",
+    options: { list: { "Inspeccionar paquetes y descartar los que no cumplen las reglas definidas": true, "Encriptar todo el tráfico": false, "Asignar direcciones IP": false, "Crear túneles VPN automáticamente": false } },
+    summary: [
+      { text: "Actúa como filtro de paquetes según reglas del administrador (diapositiva 27)." }
+    ]
+  },
+  {
+    title: "¿Qué mejora significativamente un firewall con estado respecto a uno sin estado?",
+    options: { list: { "Permite tráfico entrante solo si la conexión fue iniciada desde dentro": true, "Es más rápido": false, "No necesita reglas": false, "Bloquea todo el tráfico": false } },
+    summary: [
+      { text: "Mantiene registro de conexiones establecidas y solo permite respuestas a conexiones iniciadas internamente (diapositiva 30)." }
+    ]
+  },
+  {
+    title: "¿Qué tipo de firewall puede distinguir entre tráfico HTTP de navegación y de P2P?",
+    options: { list: { "Puerta de enlace a nivel de aplicación (proxy)": true, "Firewall de filtrado de paquetes": false, "Firewall con estado": false, "Firewall personal": false } },
+    summary: [
+      { text: "Inspecciona el contenido de los paquetes y entiende qué hace la aplicación (diapositiva 31)." }
+    ]
+  },
+  {
+    title: "¿Qué protocolo se usa comúnmente junto con firewalls para crear túneles VPN seguros?",
+    options: { list: { "IPsec (con ESP en modo túnel)": true, "SSL/TLS": false, "PPTP": false, "L2TP": false } },
+    summary: [
+      { text: "IPsec con ESP en modo túnel es la combinación más común con firewalls (diapositiva 36)." }
+    ]
+  },
+  {
+    title: "¿Qué ventaja principal tienen las VPN sobre las líneas privadas dedicadas?",
+    options: { list: { "Son mucho más baratas y usan Internet pública de forma segura": true, "Son más rápidas que las líneas dedicadas": false, "No requieren cifrado": false, "Funcionan solo dentro de una ciudad": false } },
+    summary: [
+      { text: "Antes se alquilaban líneas privadas; ahora con VPN se usa Internet de forma segura y mucho más económica (diapositiva 35)." }
+    ]
+  },
+  {
+    title: "¿Qué protocolo de seguridad inalámbrica utiliza CCMP con encriptación AES?",
+    options: { list: { "WPA2 (estándar 802.11i)": true, "WEP": false, "WPA": false, "WPA3": false } },
+    summary: [
+      { text: "WPA2 implementa 802.11i y usa CCMP con AES-128 (diapositiva 43 y 48)." }
+    ]
+  },
+  {
+    title: "¿Por qué WEP fue fácilmente vulnerado?",
+    options: { list: { "Problemas graves en su diseño criptográfico": true, "Porque usaba AES": false, "Porque era muy lento": false, "Porque no tenía contraseña": false } },
+    summary: [
+      { text: "WEP fue fácilmente vulnerado debido a fallos criptográficos (diapositiva 44)." }
+    ]
+  },
+  {
+    title: "¿Qué protocolo se usa en redes corporativas inalámbricas para autenticación robusta?",
+    options: { list: { "802.1X con EAP y servidor RADIUS": true, "WPA-PSK": false, "WEP": false, "MAC filtering": false } },
+    summary: [
+      { text: "En entornos corporativos se usa 802.1X + EAP + RADIUS (diapositiva 46)." }
+    ]
+  },
+  {
+    title: "En redes Wi-Fi domésticas, ¿qué método de autenticación es el más común (aunque menos seguro)?",
+    options: { list: { "Contraseña compartida (PSK)": true, "Certificados digitales": false, "802.1X": false, "Ninguna autenticación": false } },
+    summary: [
+      { text: "En casa se usa una contraseña compartida (todos los dispositivos conocen la misma clave) – menos seguro que el corporativo (diapositiva 47)." }
+    ]
+  },
+  {
+    title: "¿Qué estándar propuso NIST en 1991 como alternativa a RSA para firmas digitales?",
+    options: { list: { "DSS (Digital Signature Standard) basado en El Gamal": true, "AES": false, "SHA-1": false, "DES": false } },
+    summary: [
+      { text: "NIST propuso DSS basado en El Gamal (diapositiva 24)." }
+    ]
+  },
+  {
+    title: "¿Cuál de las siguientes NO fue una crítica al DSS cuando se propuso?",
+    options: { list: { "Demasiado rápido": true, "Diseñado en secreto por NSA": false, "Demasiado lento (10-40 veces más lento que RSA)": false, "Clave inicialmente de solo 512 bits": false } },
+    summary: [
+      { text: "Críticas al DSS: secreto (NSA), lento, nuevo (poco analizado), inseguro (512 bits) (diapositiva 19)." }
+    ]
+  },
+  {
+    title: "¿Qué ataque intentan evitar las estampas de tiempo (timestamps) en firmas simétricas?",
+    options: { list: { "Ataques de repetición (replay attacks)": true, "Ataques de fuerza bruta": false, "Ataques Man-in-the-Middle": false, "Ataques DoS": false } },
+    summary: [
+      { text: "Se usan timestamps y nonces para evitar ataques de repetición (diapositiva 15)." }
+    ]
+  },
+  {
+    title: "¿Qué problema surge si Alice cambia su clave privada después de firmar documentos importantes?",
+    options: { list: { "Las firmas anteriores pueden perder validez o ser cuestionadas": true, "Las nuevas firmas serán más débiles": false, "Ya no podrá usar clave pública": false, "El banco dejará de aceptarla": false } },
+    summary: [
+      { text: "Problema: cambio de claves puede invalidar firmas antiguas (diapositiva 23)." }
+    ]
+  },
+  {
+    title: "¿Qué tipo de ataque consiste en enviar miles de solicitudes falsas para saturar un servidor?",
+    options: { list: { "Ataque DoS (Denegación de Servicio)": true, "Ataque de repetición": false, "Ataque Man-in-the-Middle": false, "Ataque de diccionario": false } },
+    summary: [
+      { text: "DoS y DDoS son mencionados como amenazas que los firewalls deben mitigar (diapositiva relacionada con vulnerabilidades)." }
+    ]
+  },
+  {
+    title: "¿Qué tecnología permite a los ISP ofrecer VPNs con calidad de servicio garantizada?",
+    options: { list: { "MPLS": true, "IPsec": false, "SSL": false, "GRE": false } },
+    summary: [
+      { text: "Los ISP usan MPLS para separar tráfico VPN y garantizar QoS (diapositiva sobre VPN gestionada por ISP)." }
+    ]
+  },
+  {
+    title: "¿Qué algoritmo de cifrado usa WPA2 en modo CCMP?",
+    options: { list: { "AES": true, "RC4": false, "DES": false, "3DES": false } },
+    summary: [
+      { text: "WPA2 usa CCMP con encriptación AES (diapositiva 48)." }
+    ]
+  },
+  {
+    title: "¿Quién puede verificar una firma digital hecha con clave pública sin necesidad de secretos?",
+    options: { list: { "Cualquier persona que tenga la clave pública del emisor": true, "Solo el BB": false, "Solo el receptor": false, "Solo el gobierno": false } },
+    summary: [
+      { text: "Ventaja de clave pública: cualquiera puede verificar la firma con la clave pública." }
+    ]
+  },
+  {
+    title: "En el ejemplo del banco y la compra de oro, ¿por qué es crítico el no repudio?",
+    options: { list: { "Si el precio del oro cae, el cliente no podrá negar haber dado la orden": true, "Para que el banco pueda cobrar comisión": false, "Para acelerar la transacción": false, "Para reducir impuestos": false } },
+    summary: [
+      { text: "Ejemplo clásico del documento: cliente ordena comprar oro, precio cae, intenta negar la orden." }
+    ]
+  },
+  {
+    title: "¿Qué tipo de firewall es más efectivo contra tráfico malicioso disfrazado de legítimo?",
+    options: { list: { "Puerta de enlace a nivel de aplicación": true, "Firewall sin estado": false, "Solo filtrado de puertos": false, "NAT": false } },
+    summary: [
+      { text: "Inspecciona el contenido real de los paquetes, no solo cabeceras." }
+    ]
+  },
+  {
+    title: "¿Qué protocolo de autenticación inalámbrica es recomendado para entornos corporativos?",
+    options: { list: { "802.1X con EAP": true, "WPA2-PSK": false, "WEP": false, "Open": false } },
+    summary: [
+      { text: "En empresas se usa 802.1X + EAP + RADIUS (diapositiva 46)." }
+    ]
+  },
+  {
+    title: "¿Qué capa del modelo OSI protege principalmente IPsec?",
+    options: { list: { "Capa 3 (red)": true, "Capa 4": false, "Capa 7": false, "Capa 2": false } },
+    summary: [
+      { text: "IPsec es protocolo de capa 3 (diapositiva 36)." }
+    ]
+  },
+  {
+    title: "Según el capítulo, ¿cuál es la principal ventaja de la criptografía de clave pública sobre la simétrica para firmas?",
+    options: { list: { "No requiere una autoridad central confiable (no hay 'Gran Hermano')": true, "Es más rápida": false, "Usa claves más cortas": false, "Es más fácil de romper": false } },
+    summary: [
+      { text: "No requiere autoridad central que conozca todas las claves (diapositiva 20)." }
+    ]
+  }
+];
+examenFirmasDigitales.forEach(e => new Question(e))
+examenConectividadRed.forEach(e => new Question(e))
+examenUsoConectividadOrganizacional.forEach(e => new Question(e))
 
 /**
  * new Question({
