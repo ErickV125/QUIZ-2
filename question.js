@@ -1,455 +1,209 @@
+// Examen de práctica: Python, módulos estándar, pandas y SQLite3
+// 40 reactivos. Las opciones con valor true son las correctas.
+// Si un reactivo tiene más de una opción true, es de "seleccione todas las correctas".
 const examenPython = [
   {
-    title: "¿Cuál de los siguientes métodos del módulo math obtiene el siguiente entero en dirección contraria al cero a partir de un valor con punto flotante?",
-    options: {
-      list: {
-        "floor": false,
-        "trunc": false,
-        "ceil": true,
-        "round": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "ceil() redondea un número hacia arriba, obteniendo el entero inmediato superior en dirección contraria al cero." }
-    ]
+    title: "¿Qué valor retorna la expresión math.trunc(-3.7)?",
+    options: { list: { "-4": false, "-3": true, "-3.7": false, "3.0": false } }
   },
   {
-    title: "En el método isclose() del módulo math, ¿qué parámetro permite expresar la tolerancia como un porcentaje relativo entre los valores comparados, en lugar de un valor absoluto?",
-    options: {
-      list: {
-        "tol": false,
-        "rel_tol": true,
-        "abs_tol": false,
-        "percent_tol": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "rel_tol permite establecer la tolerancia relativa utilizada por isclose() al comparar dos valores." }
-    ]
+    title: "¿Qué ocurre al ejecutar math.sqrt(-1)?",
+    options: { list: { "Retorna el número complejo 1j": false, "Retorna 0": false, "Se produce un ValueError": true, "Retorna nan sin generar error": false } }
   },
   {
-    title: "¿Cuál de los siguientes métodos del módulo random retorna un valor entero aleatorio considerando ambos extremos del rango como valores posibles a obtener?",
-    options: {
-      list: {
-        "randrange(x, y)": false,
-        "randint(x, y)": true,
-        "random()": false,
-        "choice((x, y))": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "randint(x, y) retorna un entero aleatorio dentro del rango incluyendo tanto x como y." }
-    ]
+    title: "Constante del módulo math que representa la relación entre la circunferencia y el diámetro de un círculo:",
+    options: { list: { "math.PI": false, "math.e": false, "math.pi": true, "math.tau": false } }
   },
   {
-    title: "¿Qué método del módulo random reordena de manera aleatoria los elementos de una secuencia ya existente, modificando dicha secuencia original sin agregar ni quitar elementos?",
-    options: {
-      list: {
-        "choice()": false,
-        "sample()": false,
-        "shuffle()": true,
-        "randrange()": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "shuffle() modifica directamente la secuencia y reordena aleatoriamente sus elementos." }
-    ]
+    title: "¿Cuál es el resultado de evaluar en Python la expresión 0.1 + 0.2 == 0.3?",
+    options: { list: { "True": false, "False": true, "Se produce un error de sintaxis": false, "None": false } }
   },
   {
-    title: "De los siguientes atributos de un objeto time del módulo datetime, ¿cuáles tienen como límite superior el valor 59?",
-    options: {
-      list: {
-        "hour": false,
-        "minute": true,
-        "second": true,
-        "microsecond": false
-      }
-    },
-    summary: [
-      { title: "Respuestas correctas" },
-      { text: "Los atributos minute y second tienen valores de 0 a 59. hour llega hasta 23 y microsecond llega hasta 999999." }
-    ]
+    title: "Función del módulo random que selecciona k elementos únicos (sin repetición) de una secuencia y los retorna en una lista:",
+    options: { list: { "random.choice()": false, "random.choices()": false, "random.sample()": true, "random.shuffle()": false } }
   },
   {
-    title: "¿Qué método se utiliza para transformar una cadena de texto capturada por el usuario en un objeto de tipo fecha, de acuerdo con un formato indicado?",
-    options: {
-      list: {
-        "strftime()": false,
-        "strptime()": true,
-        "isoformat()": false,
-        "fromisoformat()": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "strptime() convierte una cadena de texto en un objeto de fecha u hora utilizando un formato especificado." }
-    ]
+    title: "¿Qué hace la instrucción random.shuffle(mi_lista)?",
+    options: { list: {
+      "Retorna una nueva lista mezclada y conserva la original": false,
+      "Reordena la lista original en sitio y retorna None": true,
+      "Retorna un elemento aleatorio de la lista": false,
+      "Ordena la lista de menor a mayor": false
+    } }
   },
   {
-    title: "¿Qué clase del módulo datetime se utiliza para representar una diferencia entre fechas y realizar aritmética de fechas, como adelantar o retroceder una cantidad determinada de días?",
-    options: {
-      list: {
-        "date": false,
-        "time": false,
-        "timedelta": true,
-        "delta": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "timedelta representa una duración o diferencia entre fechas y horas, permitiendo realizar operaciones como sumar o restar días." }
-    ]
+    title: "Si se desea que un programa que usa números pseudoaleatorios produzca siempre la misma secuencia en cada ejecución, se debe invocar antes:",
+    options: { list: { "random.fixed()": false, "random.seed()": true, "random.reset()": false, "random.static()": false } }
   },
   {
-    title: "¿Qué método del módulo sys permite conocer el consumo de memoria, expresado en bytes, de un objeto determinado?",
-    options: {
-      list: {
-        "sizeof()": false,
-        "getsizeof()": true,
-        "memsize()": false,
-        "sys.size()": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "sys.getsizeof() retorna el tamaño aproximado de un objeto en memoria, expresado en bytes." }
-    ]
+    title: "Con import datetime, ¿qué resultado produce datetime.date(2026, 11, 17) + datetime.timedelta(days=15)?",
+    options: { list: { "2026-12-02": true, "2026-12-01": false, "2026-11-32": false, "2027-01-02": false } }
   },
   {
-    title: "¿Cuáles de los siguientes métodos pertenecen al módulo os?",
-    options: {
-      list: {
-        "getcwd()": true,
-        "walk()": true,
-        "getsizeof()": false,
-        "listdir()": true
-      }
-    },
-    summary: [
-      { title: "Respuestas correctas" },
-      { text: "getcwd(), walk() y listdir() pertenecen al módulo os. getsizeof() pertenece al módulo sys." }
-    ]
+    title: "En una cadena de formato de strftime(), ¿qué directiva representa el año con cuatro dígitos?",
+    options: { list: { "%y": false, "%Y": true, "%A": false, "%m": false } }
   },
   {
-    title: "¿Qué ocurre en Python cuando se concatena un valor adicional a una variable de tipo cadena que ya contenía un valor previo?",
-    options: {
-      list: {
-        "Se modifica el objeto original en la misma dirección de memoria": false,
-        "Se crea un nuevo objeto en una dirección de memoria diferente": true,
-        "Se genera un error de tipo": false,
-        "El comportamiento depende del tamaño de la cadena resultante": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "Las cadenas son inmutables en Python. Al concatenar, se crea una nueva cadena en lugar de modificar el objeto original." }
-    ]
+    title: "¿Qué tipo de objeto retorna la resta de dos objetos datetime.date (fecha_final - fecha_inicial)?",
+    options: { list: { "int": false, "float": false, "datetime.timedelta": true, "datetime.date": false } }
   },
   {
-    title: "¿Qué secuencia de escape permite incluir un carácter de tabulación dentro de un mensaje de tipo cadena?",
-    options: {
-      list: {
-        "\\n": false,
-        "\\t": true,
-        "\\\\": false,
-        "\\a": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "\\t representa un carácter de tabulación dentro de una cadena." }
-    ]
+    title: "Seleccione únicamente todas las directivas válidas para usar con strftime():",
+    options: { list: { "%d": true, "%H": true, "%B": true, "%Q": false } }
   },
   {
-    title: "Respecto a los métodos append() y extend() de una lista, ¿cuál de las siguientes afirmaciones es correcta?",
-    options: {
-      list: {
-        "append() agrega su argumento como un único elemento al final de la lista, mientras que extend() agrega cada elemento del iterable proporcionado de manera individual": true,
-        "append() y extend() producen siempre el mismo resultado sin importar el argumento proporcionado": false,
-        "extend() únicamente admite tuplas como argumento": false,
-        "append() no puede recibir una lista como argumento": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "append() agrega el argumento como un solo elemento, mientras que extend() recorre el iterable y agrega sus elementos individualmente." }
-    ]
+    title: "En un script de Python, ¿qué contiene la lista sys.argv?",
+    options: { list: {
+      "Los módulos importados por el script": false,
+      "Los argumentos proporcionados en la línea de comandos, siendo el primer elemento el nombre del script": true,
+      "Las variables de entorno del sistema operativo": false,
+      "Los errores generados durante la ejecución": false
+    } }
   },
   {
-    title: "Dada la lista lista = [10, 20, \"xyz\", 4.5, False], ¿qué expresión permite obtener sus elementos en orden inverso sin modificar la lista original?",
-    options: {
-      list: {
-        "lista[::-1]": true,
-        "lista[-1:]": false,
-        "lista[::1]": false,
-        "lista.reverse()": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "El slicing lista[::-1] genera una nueva secuencia con los elementos en orden inverso sin modificar la lista original." }
-    ]
+    title: "Instrucción del módulo sys para terminar la ejecución de un programa:",
+    options: { list: { "sys.quit()": false, "sys.end()": false, "sys.exit()": true, "sys.stop()": false } }
   },
   {
-    title: "¿Cuáles de las siguientes opciones permiten eliminar un elemento de una lista ya existente?",
-    options: {
-      list: {
-        "del lista[0]": true,
-        "lista.remove(valor)": true,
-        "lista.discard(valor)": false,
-        "lista.append(None)": false
-      }
-    },
-    summary: [
-      { title: "Respuestas correctas" },
-      { text: "del puede eliminar un elemento mediante su índice y remove() elimina la primera coincidencia de un valor. discard() es un método de conjuntos, no de listas." }
-    ]
+    title: "Seleccione únicamente todas las funciones válidas del módulo os:",
+    options: { list: { "os.listdir()": true, "os.getcwd()": true, "os.cwd()": false, "os.dir()": false } }
   },
   {
-    title: "¿Qué método de un diccionario permite recuperar el valor asociado a una clave indicando además un valor por defecto en caso de que dicha clave no exista, evitando así que se genere un error?",
-    options: {
-      list: {
-        "keys()": false,
-        "get()": true,
-        "items()": false,
-        "values()": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "get() permite consultar una clave y proporcionar un valor predeterminado si dicha clave no existe." }
-    ]
+    title: "Si pila = [1, 2, 3] se utiliza como una estructura LIFO, ¿qué retorna pila.pop() y cómo queda la pila?",
+    options: { list: {
+      "Retorna 3 y pila queda como [1, 2]": true,
+      "Retorna 1 y pila queda como [2, 3]": false,
+      "Retorna 3 y pila queda como [1, 2, 3]": false,
+      "Retorna None y pila queda como [1, 2]": false
+    } }
   },
   {
-    title: "Si se realiza un unpacking directamente sobre un diccionario completo, sin invocar ningún método de este, ¿qué es lo que se asignará a las variables destino?",
-    options: {
-      list: {
-        "Los valores asociados a cada clave": false,
-        "Las claves del diccionario": true,
-        "Tuplas conformadas por clave y valor": false,
-        "Se genera un error, pues no es posible hacer unpacking sobre un diccionario": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "Al iterar o realizar unpacking directamente sobre un diccionario, Python utiliza sus claves. Para obtener pares clave-valor se utilizaría, por ejemplo, items()." }
-    ]
+    title: "¿Qué imprime el siguiente código?\nfrom collections import deque\nd = deque([10, 20, 30])\nprint(d.popleft())",
+    options: { list: { "Imprime 30": false, "Imprime 10": true, "Imprime deque([20, 30])": false, "Se produce un error": false } }
   },
   {
-    title: "¿Qué operador se utiliza en Python para obtener la diferencia simétrica entre dos conjuntos?",
-    options: {
-      list: {
-        "-": false,
-        "&": false,
-        "|": false,
-        "^": true
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "El operador ^ obtiene la diferencia simétrica entre dos conjuntos, es decir, los elementos que pertenecen a uno u otro conjunto, pero no a ambos." }
-    ]
+    title: "Seleccione únicamente todos los métodos válidos de un objeto deque:",
+    options: { list: { "append()": true, "appendleft()": true, "popleft()": true, "enqueue()": false } }
   },
   {
-    title: "¿Qué característica deben cumplir obligatoriamente los elementos que se desean almacenar dentro de un conjunto (set) de Python?",
-    options: {
-      list: {
-        "Deben ser todos del mismo tipo de dato": false,
-        "Deben ser de un tipo de dato inmutable": true,
-        "Deben mantener un orden específico": false,
-        "Deben ser exclusivamente valores numéricos": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "Los elementos de un set deben ser hashables. Los tipos inmutables, como int, str y tuple bajo ciertas condiciones, pueden utilizarse como elementos de un conjunto." }
-    ]
+    title: "¿Qué ocurre al ejecutar el siguiente código?\nt = (1, 2, 3)\nt[0] = 9",
+    options: { list: {
+      "t queda como (9, 2, 3)": false,
+      "Se produce un TypeError porque las tuplas son inmutables": true,
+      "Se produce un IndexError": false,
+      "t queda como (1, 2, 3) sin mostrar error": false
+    } }
   },
   {
-    title: "¿Qué estructura de datos se caracteriza por seguir el principio LIFO (Last In, First Out)?",
-    options: {
-      list: {
-        "Cola": false,
-        "Pila": true,
-        "Diccionario": false,
-        "Conjunto": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "Una pila sigue el principio LIFO: el último elemento que entra es el primero que sale." }
-    ]
+    title: "El valor null de un documento JSON se convierte en Python (con el módulo json) en:",
+    options: { list: { "None": true, "null": false, "0": false, "Una cadena vacía": false } }
   },
   {
-    title: "Respecto al uso de deque del módulo collections para implementar colas y pilas, ¿cuáles de las siguientes afirmaciones son correctas?",
-    options: {
-      list: {
-        "Se recomienda utilizar deque en lugar de una lista cuando se espera almacenar una gran cantidad de elementos en una cola": true,
-        "Para desencolar un elemento cuando la cola se implementa con una lista se utiliza pop(0)": true,
-        "Para desencolar un elemento cuando la cola se implementa con deque se utiliza popleft()": true,
-        "Un objeto deque no cuenta con el método append()": false
-      }
-    },
-    summary: [
-      { title: "Respuestas correctas" },
-      { text: "deque está optimizado para operaciones en ambos extremos. Con una lista se puede desencolar mediante pop(0), mientras que deque utiliza popleft(). Además, deque sí cuenta con append()." }
-    ]
+    title: "Parámetro de json.dumps() que permite obtener una cadena con sangría y legible para humanos:",
+    options: { list: { "format": false, "pretty": false, "indent": true, "tab": false } }
   },
   {
-    title: "¿Qué método del módulo json permite tomar una estructura de datos de Python y almacenarla directamente dentro de un archivo abierto previamente?",
-    options: {
-      list: {
-        "json.load()": false,
-        "json.dump()": true,
-        "json.loads()": false,
-        "json.dumps()": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "json.dump() serializa una estructura de datos de Python y escribe directamente el resultado en un archivo abierto." }
-    ]
+    title: "¿Qué tipo de objeto de Python retorna json.loads('{\"a\": 1}')?",
+    options: { list: { "list": false, "str": false, "tuple": false, "dict": true } }
   },
   {
-    title: "Dado que JSON carece de un tipo de dato nativo para representar fechas, ¿qué parámetro del método dump() permite indicar una función definida por el usuario que se encargue de convertir a texto aquellos objetos no serializables directamente, como los de tipo datetime?",
-    options: {
-      list: {
-        "indent=": false,
-        "default=": true,
-        "cls=": false,
-        "convert=": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "El parámetro default= permite proporcionar una función que transforme objetos que el codificador JSON no puede serializar directamente." }
-    ]
+    title: "Clase de la librería openpyxl que se utiliza para crear un libro de Excel nuevo desde cero:",
+    options: { list: { "load_workbook": false, "Workbook": true, "Sheet": false, "ExcelFile": false } }
   },
   {
-    title: "¿Cuáles de las siguientes son formas válidas de asignar etiquetas de índice personalizadas a una Serie de pandas?",
-    options: {
-      list: {
-        "Asignar posteriormente un valor al atributo .index de la Serie ya creada": true,
-        "Proporcionar un diccionario como argumento al construir la Serie, donde las llaves se conviertan en el índice": true,
-        "Proporcionar las etiquetas como segundo argumento posicional al momento de crear la Serie": true,
-        "Las Series de pandas no permiten personalizar su índice bajo ninguna circunstancia": false
-      }
-    },
-    summary: [
-      { title: "Respuestas correctas" },
-      { text: "El índice puede establecerse posteriormente mediante .index, mediante las claves de un diccionario o proporcionando el índice como segundo argumento posicional de Series()." }
-    ]
+    title: "Función de pandas para leer el contenido de un archivo .xlsx y obtenerlo como un DataFrame:",
+    options: { list: { "pd.open_excel()": false, "pd.load_excel()": false, "pd.import_excel()": false, "pd.read_excel()": true } }
   },
   {
-    title: "¿Qué método de una Serie de pandas retorna, en una sola instrucción, un resumen que incluye conteo, media, desviación estándar, valores mínimo y máximo, entre otros estadísticos descriptivos?",
-    options: {
-      list: {
-        "resume()": false,
-        "describe()": true,
-        "info()": false,
-        "stats()": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "describe() genera un resumen estadístico con información como conteo, media, desviación estándar, mínimo, máximo y cuartiles." }
-    ]
+    title: "Tipo de gráfica que se genera con la sentencia serie.plot.hist() y que es útil para:",
+    options: { list: {
+      "Comparar valores de categorías con barras horizontales": false,
+      "Observar la distribución de frecuencias de valores numéricos": true,
+      "Mostrar la evolución de un valor en el tiempo con una línea": false,
+      "Representar proporciones de un total": false
+    } }
   },
   {
-    title: "En un DataFrame de pandas, ¿a qué se refiere el valor axis=1 cuando se indica como parámetro al calcular un estadístico descriptivo?",
-    options: {
-      list: {
-        "Al eje correspondiente a los renglones": false,
-        "Al eje correspondiente a las columnas": true,
-        "Depende de la cantidad de columnas que tenga el DataFrame": false,
-        "axis=1 no es un valor aceptado por los métodos de estadísticos descriptivos": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "En pandas, axis=1 corresponde al eje de las columnas y permite realizar la operación a través de las columnas, produciendo resultados por renglón." }
-    ]
+    title: "¿Qué retorna \"hola mundo\".title()?",
+    options: { list: { "HOLA MUNDO": false, "Hola mundo": false, "Hola Mundo": true, "hola mundo": false } }
   },
   {
-    title: "¿Cuáles de los siguientes métodos permiten filtrar o seleccionar un subconjunto de renglones de un DataFrame?",
-    options: {
-      list: {
-        "loc[]": true,
-        "iloc[]": true,
-        "head()": true,
-        "columns[]": false
-      }
-    },
-    summary: [
-      { title: "Respuestas correctas" },
-      { text: "loc[] permite seleccionar mediante etiquetas, iloc[] mediante posiciones y head() permite obtener un subconjunto de los primeros renglones. columns[] se relaciona con las columnas y no es un método de selección de renglones." }
-    ]
+    title: "¿Qué imprime print(\"banana\".count(\"an\"))?",
+    options: { list: { "Imprime 1": false, "Imprime 2": true, "Imprime 3": false, "Imprime 6": false } }
   },
   {
-    title: "¿Cuáles de las siguientes se caracterizan por ser estructuras de datos tabulares?",
-    options: {
-      list: {
-        "xlsx": true,
-        "csv": true,
-        "json": false,
-        "pickle": false
-      }
-    },
-    summary: [
-      { title: "Respuestas correctas" },
-      { text: "xlsx y csv son formatos utilizados para representar datos de manera tabular, organizados principalmente en filas y columnas. JSON y pickle tienen estructuras de representación diferentes." }
-    ]
+    title: "¿Qué imprime el siguiente código?\nnumeros = [3, 1, 2]\nprint(numeros.sort())",
+    options: { list: { "[1, 2, 3]": false, "[3, 1, 2]": false, "None": true, "Se produce un error": false } }
   },
   {
-    title: "¿Qué método, invocado directamente sobre una Serie o un DataFrame de pandas, permite generar de forma inmediata una gráfica de barras horizontales?",
-    options: {
-      list: {
-        "plot.bar()": false,
-        "plot.barh()": true,
-        "plot.hist()": false,
-        "plot.box()": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "plot.barh() genera una gráfica de barras horizontales a partir de una Serie o un DataFrame." }
-    ]
+    title: "¿Qué resultado produce [10, 20, 30, 40, 50][::-1]?",
+    options: { list: { "[50, 40, 30, 20, 10]": true, "[10, 20, 30, 40, 50]": false, "[50]": false, "Se produce un error": false } }
   },
   {
-    title: "¿Qué método de un objeto Workbook de openpyxl debe invocarse para que los cambios realizados en memoria queden almacenados de manera permanente en un archivo?",
-    options: {
-      list: {
-        "write()": false,
-        "save()": true,
-        "commit()": false,
-        "flush()": false
-      }
-    },
-    summary: [
-      { title: "Respuesta correcta" },
-      { text: "El método save() guarda el contenido del Workbook en un archivo, haciendo permanentes los cambios realizados en memoria." }
-    ]
+    title: "¿Qué resultado produce [x ** 2 for x in range(4)]?",
+    options: { list: { "[1, 4, 9, 16]": false, "[0, 1, 4, 9]": true, "[0, 2, 4, 6]": false, "[0, 1, 2, 3]": false } }
   },
   {
-    title: "¿Cuáles de las siguientes son formas válidas de acceder o asignar el valor de una celda específica utilizando openpyxl?",
-    options: {
-      list: {
-        "hoja[\"B1\"].value": true,
-        "hoja.cell(row=1, column=2).value": true,
-        "hoja.get_cell(\"B1\")": false,
-        "hoja.value(\"B1\")": false
-      }
-    },
-    summary: [
-      { title: "Respuestas correctas" },
-      { text: "Una celda puede accederse mediante la notación hoja[\"B1\"].value o mediante hoja.cell(row=1, column=2).value. get_cell() y value() no son métodos válidos de una hoja de openpyxl para esta operación." }
-    ]
+    title: "Método de un diccionario que retorna una vista con los pares (llave, valor) y permite recorrerlo con for k, v in ...:",
+    options: { list: { "keys()": false, "values()": false, "items()": true, "pairs()": false } }
+  },
+  {
+    title: "¿Qué imprime el siguiente código?\nprint(len(set([1, 2, 2, 3, 3, 3])))",
+    options: { list: { "Imprime 6": false, "Imprime 3": true, "Imprime 1": false, "Imprime 2": false } }
+  },
+  {
+    title: "Excepción que se produce al ejecutar la expresión 10 / 0:",
+    options: { list: { "ValueError": false, "ArithmeticFailure": false, "ZeroDivisionError": true, "TypeError": false } }
+  },
+  {
+    title: "Método de un cursor de SQLite3 que ejecuta una misma sentencia SQL parametrizada una vez por cada elemento de una secuencia de parámetros (por ejemplo, una lista de tuplas):",
+    options: { list: { "executeall()": false, "executemany()": true, "executescript()": false, "fetchmany()": false } }
+  },
+  {
+    title: "Cuando ya no existen más registros por recuperar en el resultado de una consulta, el método fetchone() retorna:",
+    options: { list: { "Una tupla vacía": false, "Una lista vacía": false, "None": true, "Lanza una excepción StopIteration": false } }
+  },
+  {
+    title: "Tabla del sistema de SQLite en la que se puede consultar el catálogo de los objetos (tablas, índices) creados en la base de datos:",
+    options: { list: { "sqlite_master": true, "sqlite_tables": false, "sys_objects": false, "information_schema": false } }
+  },
+  {
+    title: "Si se invoca sqlite3.connect(\":memory:\"), ¿qué se obtiene?",
+    options: { list: {
+      "Una base de datos temporal alojada en la memoria RAM que desaparece al cerrar la conexión": true,
+      "Un archivo llamado :memory: en el directorio actual": false,
+      "Una excepción porque el nombre no es válido": false,
+      "Una conexión de solo lectura a una base de datos existente": false
+    } }
+  },
+  {
+    title: "¿Qué efecto tiene ejecutar UPDATE contacto SET nombre = 'X' sin incluir la cláusula WHERE?",
+    options: { list: {
+      "Se produce un error de sintaxis": false,
+      "Se modifica únicamente el primer registro": false,
+      "Se modifica el campo nombre de todos los registros de la tabla": true,
+      "No se modifica ningún registro": false
+    } }
+  },
+  {
+    title: "Atributo de un DataFrame de pandas que retorna una tupla con la cantidad de filas y de columnas:",
+    options: { list: { "df.size": false, "df.shape": true, "df.dim": false, "df.len": false } }
+  },
+  {
+    title: "Sentencia que ordena un DataFrame df por la columna Monto de mayor a menor:",
+    options: { list: {
+      "df.sort_values(\"Monto\", ascending=False)": true,
+      "df.sort(\"Monto\", reverse=True)": false,
+      "df.order_by(\"Monto\", desc=True)": false,
+      "df.sort_values(\"Monto\", descending=True)": false
+    } }
+  },
+  {
+    title: "Método de una serie de pandas que cuenta cuántas veces aparece cada valor distinto:",
+    options: { list: { "count_each()": false, "unique()": false, "value_counts()": true, "frequency()": false } }
   }
 ];
+
 examenPython.forEach(e => new Question(e))
 
 
