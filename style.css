@@ -222,9 +222,7 @@ form {
     z-index: -1;
     transition: 250ms all;
 }
-.options-container input[type='checkbox'] + .option{
-    border: 2px dashed var(--color-primary);
-}
+
 
 .options-container > input:checked + .option::before{
     background: var(--selected);
