@@ -324,3 +324,12 @@ form {
     border: 2px solid var(--color-secondary);
     font-weight: 700;
 }
+.result-img {
+    display: flex;
+    justify-content: center;
+}
+.result-img img {
+    max-width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+}

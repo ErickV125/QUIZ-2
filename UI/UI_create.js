@@ -387,6 +387,19 @@ function resultsBlock(correct, total, score) {
         Parent: result,
         autoGenWords: { string: `${correct} / ${total} : ${score}%`, time: 10 }
     }).create();
+    // Imagen de terminación según la calificación
+    const memeSrc = score === 0 ? "img/bob.png"
+        : score === 100 ? "img/alber.png"
+        : score < 80 ? "img/mrd.png"
+        : "img/pensar.png";
+    const imgBox = new CreateE('div', '', {
+        Parent: container,
+        ClassList: ['result-img']
+    }).create();
+    new CreateE('img', '', {
+        Parent: imgBox,
+        PropertyList: { src: memeSrc, alt: `Resultado: ${score}%` }
+    }).create();
     const btn = new CreateE('button', '', {
         Parent: container,
         ClassList: "BTNFINISH",
