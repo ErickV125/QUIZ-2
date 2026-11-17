@@ -116,7 +116,7 @@ const configQuestion = {
             type = 'checkbox'
             options = Object.keys(Data.list);
             instance.answer = Object.keys(Data.list).filter(key => Data.list[key])
-            if (1== instance.answer.reduce((acc,val)=>{if(val){return 1}},0)){
+            if (1=== instance.answer.length){
                 type = 'radio'
             }
         }
